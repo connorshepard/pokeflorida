@@ -837,16 +837,16 @@ Common_EventScript_PlayerHandedOverTheItem::
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
-	.string "“Selected items for your convenience!”\n"
-	.string "POKéMON MART$"
+	.string "“Where shopping is a pleasure!”\n"
+	.string "PUBLIX$"
 
 gText_PokemonCenterSign::
 	.string "“Rejuvenate your tired partners!”\n"
 	.string "POKéMON CENTER$"
 
 gText_MomOrDadMightLikeThisProgram::
-	.string "{STR_VAR_1} might like this program.\n"
-	.string "… … … … … … … … … … … … … … … …\p"
+	.string "A film is playing on HBO Max.\n"
+	.string "Something about galactic jihad?\p"
 	.string "Better get going!$"
 
 gText_WhichFloorWouldYouLike::

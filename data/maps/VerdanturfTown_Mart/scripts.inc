@@ -13,18 +13,16 @@ VerdanturfTown_Mart_EventScript_Clerk::
 
 	.align 2
 VerdanturfTown_Mart_Pokemart:
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_NEST_BALL
-	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_REPEL
-	.2byte ITEM_X_SP_ATK
 	.2byte ITEM_FLUFFY_TAIL
-	.2byte ITEM_NONE
+    .2byte ITEM_NONE
 	release
 	end
 
@@ -41,20 +39,20 @@ VerdanturfTown_Mart_EventScript_Lass::
 	end
 
 VerdanturfTown_Mart_Text_XSpecialIsCrucial:
-	.string "For any POKéMON match, X SPECIAL\n"
-	.string "is crucial.\p"
-	.string "It jacks up the power of some moves\n"
-	.string "even though it's only for one battle.$"
+	.string "Shhh. I'm just hanging out here\n"
+	.string "for the cold A/C.\p"
+	.string "My power went out this morning\n"
+	.string "and it's fucking 95 out there.$"
 
 VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent:
-	.string "They don't seem to sell any winning\n"
-	.string "strategy guides for the BATTLE TENT…\p"
-	.string "It seems one must rely on one's\n"
-	.string "own wits after all…$"
+	.string "Time for my daily lotto tickets!\n"
+	.string "I buy 10 scratchers every day.\p"
+	.string "I hope you don't mind waiting\n"
+	.string "behind me in line...$"
 
 VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon:
-	.string "The NEST BALL works better on\n"
-	.string "weakened POKéMON.\p"
-	.string "VERDANTURF is the only place you can\n"
-	.string "buy it.$"
+	.string "Hi! Do you want to buy some\n"
+	.string "Girl Scout cookies from me?\p"
+	.string "My mom is waiting outside here\n"
+	.string "to try and guilt you into it.$"
 

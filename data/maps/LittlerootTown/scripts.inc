@@ -76,18 +76,18 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 	return
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
-	setobjectxyperm LOCALID_MOM, 14, 8
+	setobjectxyperm LOCALID_MOM, 14, 13
 	return
 
 LittlerootTown_EventScript_SetTwinPos::
 	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm LOCALID_TWIN, 10, 1
+	setobjectxyperm LOCALID_TWIN, 32, 18
 	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_EventScript_SetTwinGuardingRoutePos::
-	setobjectxyperm LOCALID_TWIN, 7, 2
-	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_TWIN, 32, 18
+	setobjectmovementtype LOCALID_TWIN, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
@@ -99,11 +99,11 @@ LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
 	return
 
 LittlerootTown_EventScript_SetMomInFrontOfDoorMale::
-	setobjectxyperm LOCALID_MOM, 5, 9
+	setobjectxyperm LOCALID_MOM, 5, 13
 	return
 
 LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
-	setobjectxyperm LOCALID_MOM, 14, 9
+	setobjectxyperm LOCALID_MOM, 14, 13
 	return
 
 LittlerootTown_OnFrame:
@@ -286,19 +286,15 @@ LittlerootTown_EventScript_GoodLuck::
 	end
 
 LittlerootTown_EventScript_NeedPokemonTriggerLeft::
-	lockall
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
-	waitmovement 0
+	lock
+    faceplayer
 	call LittlerootTown_EventScript_DangerousWithoutPokemon
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinReturnLeft
-	waitmovement 0
 	releaseall
 	end
 
 LittlerootTown_EventScript_DangerousWithoutPokemon::
 	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
 	waitmovement 0
 	msgbox LittlerootTown_Text_DangerousIfYouDontHavePokemon, MSGBOX_DEFAULT
@@ -322,7 +318,7 @@ LittlerootTown_Movement_TwinApproachPlayerLeft:
 	step_end
 
 LittlerootTown_Movement_TwinPushPlayerFromRoute:
-	walk_down
+	walk_left
 	step_end
 
 LittlerootTown_Movement_TwinReturnLeft:
@@ -332,14 +328,14 @@ LittlerootTown_Movement_TwinReturnLeft:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
+	walk_leftxxzx
 	walk_up
 	walk_in_place_faster_down
 	step_end
 
 LittlerootTown_Movement_PushPlayerBackFromRoute:
 	lock_facing_direction
-	walk_down
+	walk_left
 	unlock_facing_direction
 	step_end
 
@@ -399,6 +395,7 @@ LittlerootTown_EventScript_TownSign::
 LittlerootTown_EventScript_BirchsLabSign::
 	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN
 	end
+    
 
 LittlerootTown_EventScript_BrendansHouseSign::
 	lockall
@@ -491,12 +488,12 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger::
 
 LittlerootTown_EventScript_SetHomeDoorCoordsMale::
 	setvar VAR_0x8009, 5
-	setvar VAR_0x800A, 8
+	setvar VAR_0x800A, 12
 	return
 
 LittlerootTown_EventScript_SetHomeDoorCoordsFemale::
 	setvar VAR_0x8009, 14
-	setvar VAR_0x800A, 8
+	setvar VAR_0x800A, 12
 	return
 
 LittlerootTown_EventScript_MomNoticePlayerMale::
@@ -908,17 +905,21 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	closemessage
 	delay 30
 	return
+    
+LittlerootTown_EventScript_PoloSign::
+	msgbox LittlerootTown_Text_Polo, MSGBOX_SIGN
+	end
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
-	.string "It must be tiring riding with our things\n"
+	.string "I still can't believe that you rode\n"
 	.string "in the moving truck.\p"
-	.string "Well, this is LITTLEROOT TOWN.\p"
-	.string "How do you like it?\n"
-	.string "This is our new home!\p"
-	.string "It has a quaint feel, but it seems to be\n"
+	.string "Well, this is Wellington.\p"
+	.string "Horse POKéMON are everywhere!\n"
+	.string "Other than that, though...\p"
+	.string "It's a little sleepy, but it looks like\n"
 	.string "an easy place to live, don't you think?\p"
-	.string "And, you get your own room, {PLAYER}!\n"
+	.string "Wanna go see your room, {PLAYER}?\n"
 	.string "Let's go inside.$"
 
 LittlerootTown_Text_WaitPlayer:
@@ -926,10 +927,10 @@ LittlerootTown_Text_WaitPlayer:
 
 LittlerootTown_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
-	.string "introduce yourself to PROF. BIRCH?\p"
-	.string "Oh! What an adorable POKéMON!\n"
-	.string "You got it from PROF. BIRCH. How nice!\p"
-	.string "You're your father's child, all right.\n"
+	.string "say hi to PROF. MANGROVE?\p"
+	.string "Oh! I love your gator!\n"
+	.string "You got it from the PROF? How nice!\p"
+	.string "Can't be a trainer without one!\n"
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
 	.string "adventure, wear these RUNNING SHOES.\p"
@@ -958,21 +959,21 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "If you use a PC, you can store items\n"
-	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+	.string "Wellington used to be a swamp\n"
+	.string "until, like, 1953?\p"
+	.string "The power of science is crazy!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
+	.string "MANGROVE spends days in his LAB\n"
 	.string "studying, then he'll suddenly go out in\l"
 	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "When does PROF. MANGROVE ever\n"
+	.string "go home?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
-	.string "If you go outside and go in the grass,\n"
-	.string "wild POKéMON will jump out!$"
+	.string "There's a horsies in this grass.\n"
+	.string "They escaped from the polo club.$"
 
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
 	.string "It's dangerous if you don't have\n"
@@ -988,28 +989,32 @@ LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "for me?$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "You saved PROF. BIRCH!\n"
-	.string "I'm so glad!$"
+	.string "You saved PROF. MANGROVE!\n"
+	.string "Nicely done!$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Are you going to catch POKéMON?\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "VILLAGE OF WELLINGTON\n"
+	.string "“The Winter Polo Capital of the World”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "PROF. MANGROVE'S POKéMON LAB$"
+    
+LittlerootTown_Text_Polo:
+	.string "PALM BEACH POLO & COUNTRY CLUB\n"
+    .string "Closed for the summer.$"
 
 LittlerootTown_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. MANGROVE'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "MANGROVE: Well, well, {PLAYER}{KUN}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
 	.string "about you when I first saw you,\l"

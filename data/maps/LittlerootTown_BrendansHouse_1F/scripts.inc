@@ -315,7 +315,7 @@ PlayersHouse_1F_Text_OhComeQuickly:
 	.string "Quick! Come quickly!$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "MOM: Look! It's PETALBURG GYM!\n"
+	.string "MOM: Look! It's a show about pools!\n"
 	.string "Maybe DAD will be on!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
@@ -326,7 +326,7 @@ PlayersHouse_1F_Text_ItsOverWeMissedHim:
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
 	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
+	.string "MANGROVE is his name.\p"
 	.string "He lives right next door, so you should\n"
 	.string "go over and introduce yourself.$"
 
@@ -335,7 +335,7 @@ PlayersHouse_1F_Text_SeeYouHoney:
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
 	.string "MOM: Did you introduce yourself to\n"
-	.string "PROF. BIRCH?$"
+	.string "PROF. MANGROVE?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "MOM: How are you doing, {PLAYER}?\n"
@@ -373,13 +373,13 @@ PlayersHouse_1F_Text_Vigoroth2:
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "INTERVIEWER: …We brought you this\n"
-	.string "report from in front of PETALBURG GYM.$"
+	.string "report live from WEST PALM BEACH.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "There is a movie on TV.\p"
-	.string "Two men are dancing on a big piano\n"
-	.string "keyboard.\p"
-	.string "Better get going!$"
+	.string "A boy is choking out a girl\n"
+	.string "on a beach in a sea of blood.\p"
+	.string "What's Mom watching in here?!$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
 	.string "It's the instruction booklet for the\n"

@@ -434,7 +434,7 @@ static const struct LevelUpMove sArbokLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sPikachuLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_SURF),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 5, MOVE_GROWL),
     LEVEL_UP_MOVE( 7, MOVE_PLAY_NICE),

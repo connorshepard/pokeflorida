@@ -136,7 +136,7 @@ static const struct SpritePalette sCityZoomTilesSpritePalette[] =
 static const struct WindowTemplate sMapSecInfoWindowTemplate =
 {
     .bg = 1,
-    .tilemapLeft = 17,
+    .tilemapLeft = 0,
     .tilemapTop = 4,
     .width = 12,
     .height = 13,

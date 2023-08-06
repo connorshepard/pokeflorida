@@ -290,7 +290,7 @@ Route103_EventScript_Isabelle::
 
 Route103_Text_MayRoute103Pokemon:
 	.string "MAY: Let's see… The POKéMON found\n"
-	.string "on ROUTE 103 include…$"
+	.string "in West Palm include…$"
 
 Route103_Text_MayLetsBattle:
 	.string "Oh, hi, {PLAYER}{KUN}!\p"
@@ -299,7 +299,7 @@ Route103_Text_MayLetsBattle:
 	.string "Since we're here, let's have a quick\n"
 	.string "battle!\p"
 	.string "I'll give you a taste of what being\n"
-	.string "a TRAINER is like.$"
+	.string "a Florida Man is like.$"
 
 Route103_Text_MayDefeated:
 	.string "Wow! That's great!\n"
@@ -317,14 +317,14 @@ Route103_Text_MayTimeToHeadBack:
 
 Route103_Text_BrendanRoute103Pokemon:
 	.string "BRENDAN: Okay, so it's this one and\n"
-	.string "that one that live on ROUTE 103…$"
+	.string "that one that live in West Palm…$"
 
 Route103_Text_BrendanLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
 	.string "…Oh, yeah, Dad gave you a POKéMON.\p"
 	.string "Since we're here, how about a little\n"
 	.string "battle?\p"
-	.string "I'll teach you what being a TRAINER's\n"
+	.string "I'll teach you what a Florida Man's\n"
 	.string "about!$"
 
 Route103_Text_BrendanDefeated:
@@ -350,6 +350,7 @@ Route103_Text_ShortcutToOldale:
 	.string "Fufufu, that's useful, isn't it?$"
 
 Route103_Text_RouteSign:
-	.string "ROUTE 103\n"
-	.string "{DOWN_ARROW} OLDALE TOWN$"
+	.string "State Road 441\p"
+    .string "{RIGHT_ARROW} Palm Beach Island\n"
+	.string "{DOWN_ARROW} Wellington$"
 

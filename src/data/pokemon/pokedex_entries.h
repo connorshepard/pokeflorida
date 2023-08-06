@@ -302,7 +302,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_PIKACHU] =
     {
-        .categoryName = _("Mouse"),
+        .categoryName = _("Surfing"),
         .height = 4,
         .weight = 60,
         .description = gPikachuPokedexText,

@@ -70,6 +70,7 @@
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F        (2 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
+#define MAP_VERDANTURF_TOWN_MART                 (5 | (1 << 8))
 
 // gMapGroup_IndoorOldale
 #define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
@@ -109,12 +110,11 @@
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY       (0 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR    (1 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM (2 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_MART                    (3 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F       (4 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F       (5 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_WANDAS_HOUSE            (6 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
-#define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F       (3 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F       (4 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_WANDAS_HOUSE            (5 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (6 | (6 << 8))
+#define MAP_VERDANTURF_TOWN_HOUSE                   (7 | (6 << 8))
 
 // gMapGroup_IndoorPacifidlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))

@@ -328,7 +328,7 @@ LittlerootTown_Movement_TwinReturnLeft:
 	walk_left
 	walk_left
 	walk_left
-	walk_leftxxzx
+	walk_left
 	walk_up
 	walk_in_place_faster_down
 	step_end

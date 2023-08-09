@@ -3575,9 +3575,9 @@ static const u8 sGoodRodDesc[] = _(
     "wild Pokémon.");
 
 static const u8 sSuperRodDesc[] = _(
-    "The best fishing\n"
-    "rod for catching\n"
-    "wild Pokémon.");
+    "A gift from your\n"
+    "dad, use it to fish\n"
+    "for wild Pokémon.");
 
 static const u8 sDowsingMachineDesc[] = _(
     "A device that\n"

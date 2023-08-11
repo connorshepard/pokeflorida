@@ -452,8 +452,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+#define OBJ_EVENT_PAL_TAG_DACHSBUN                0x1124
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
-#define OBJ_EVENT_PAL_TAG_DACHSBUN                0x1200
+
 
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -501,6 +502,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Dachsbun,              OBJ_EVENT_PAL_TAG_DACHSBUN},
+
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
@@ -577,6 +579,13 @@ static const u16 sReflectionPaletteTags_SSTidal[] = {
     OBJ_EVENT_PAL_TAG_SSTIDAL,
     OBJ_EVENT_PAL_TAG_SSTIDAL,
     OBJ_EVENT_PAL_TAG_SSTIDAL,
+};
+
+static const u16 sReflectionPaletteTags_Dachsbun[] = {
+    OBJ_EVENT_PAL_TAG_DACHSBUN,
+    OBJ_EVENT_PAL_TAG_DACHSBUN,
+    OBJ_EVENT_PAL_TAG_DACHSBUN,
+    OBJ_EVENT_PAL_TAG_DACHSBUN,
 };
 
 static const u16 sReflectionPaletteTags_SubmarineShadow[] = {

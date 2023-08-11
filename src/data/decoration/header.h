@@ -1308,18 +1308,6 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_GRASS_CUSHION,
     },
 
-    [DECOR_FIRE_CUSHION] =
-    {
-        .id = DECOR_FIRE_CUSHION,
-        .name = _("FIRE CUSHION"),
-        .permission = DECORPERM_SPRITE,
-        .shape = DECORSHAPE_1x1,
-        .category = DECORCAT_CUSHION,
-        .price = 2000,
-        .description = DecorDesc_FIRE_CUSHION,
-        .tiles = DecorGfx_FIRE_CUSHION,
-    },
-
     [DECOR_WATER_CUSHION] =
     {
         .id = DECOR_WATER_CUSHION,

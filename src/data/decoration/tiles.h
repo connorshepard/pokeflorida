@@ -594,10 +594,6 @@ const u16 DecorGfx_GRASS_CUSHION[] = {
     OBJ_EVENT_GFX_GRASS_CUSHION
 };
 
-const u16 DecorGfx_FIRE_CUSHION[] = {
-    OBJ_EVENT_GFX_FIRE_CUSHION
-};
-
 const u16 DecorGfx_WATER_CUSHION[] = {
     OBJ_EVENT_GFX_WATER_CUSHION
 };

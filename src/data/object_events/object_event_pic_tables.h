@@ -979,7 +979,7 @@ static const struct SpriteFrameImage sPicTable_Poochyena[] = {
 
 static const struct SpriteFrameImage sPicTable_Dachsbun[] = {
     overworld_frame(gObjectEventPic_Dachsbun, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Dachsbuna, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Dachsbun, 4, 4, 1),
     overworld_frame(gObjectEventPic_Dachsbun, 4, 4, 2),
     overworld_frame(gObjectEventPic_Dachsbun, 4, 4, 3),
     overworld_frame(gObjectEventPic_Dachsbun, 4, 4, 4),

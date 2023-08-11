@@ -698,9 +698,9 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "I think you're ready to get one!\p"
 	.string "Good thing, too, you're gonna\n"
 	.string "need one to get out of Wellington.\p"
-	.string "Tell you what, I'll give you\n"
-	.string "the POKéMON you used earlier\l"
-	.string "to rescue me.\p"
+	.string "How about, I'll give you\n"
+	.string "the POKéMON you picked earlier.\l"
+	.string "I can tell it wants to come with.\p"
 	.string "{PLAYER} received the {STR_VAR_1}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
@@ -717,14 +717,14 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "find {RIVAL} for me, will ya?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
-	.string "PROF. MANGROVE: Great!\n"
-	.string "{RIVAL} should be happy, too.\p"
-	.string "Get {RIVAL} to teach you what it\n"
-	.string "means to be a trainer.$"
+	.string "PROF. MANGROVE: Dope!\n"
+	.string "{RIVAL} and you should be buds.\p"
+	.string "Ask {RIVAL} to teach you what it\n"
+	.string "means to a Floridian.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
 	.string "PROF. MANGROVE: C'mon, brother.\n"
-	.string "You should go meet my kid.$"
+	.string "Seriously, go meet my kid.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "PROF. MANGROVE: {RIVAL}?\n"

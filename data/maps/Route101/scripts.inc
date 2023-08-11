@@ -22,10 +22,10 @@ Route101_EventScript_HideMapNamePopup::
 Route101_EventScript_StartBirchRescue::
 	lockall
 	playbgm MUS_HELP, TRUE
-	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
+	msgbox_mugshot Route101_Text_HelpMe, MSGBOX_DEFAULT, MUGSHOT_MANGROVE
 	closemessage
-	setobjectxy LOCALID_BIRCH, 0, 15
-	setobjectxy LOCALID_WINGULL, 0, 16
+	setobjectxy LOCALID_BIRCH, 7, 18
+	setobjectxy LOCALID_WINGULL, 7, 19
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchRunAway1
 	applymovement LOCALID_WINGULL, Route101_Movement_ZigzagoonChase1
@@ -258,28 +258,28 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "H-help me!$"
+	.string "Aww, Jesus!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+	.string "Hey, new kid!\n"
+	.string "Get this thing offa me!\p"
+	.string "Grab a POKéMON, quick,\n"
+	.string "I've got a bag full of gators.$"
 
 Route101_Text_DontLeaveMe:
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+	.string "HEY!\n"
+	.string "For God's sake's, help me out.$"
 
 Route101_Text_YouSavedMe:
-	.string "MANGROVE: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I got jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "MANGROVE: Phew...!\p"
+	.string "Well, I dunno what the hell that was.\n"
+	.string "Well, thanks a million, buddy. \p"
+	.string "I'm more of a lover than a fighter, haha.\n"
+	.string "Well, anyways.\p"
+	.string "What's good?\p"
+	.string "Enjoying FLorida, {PLAYER}{KUN}?\p"
+	.string "Tell ya what, head over to mine later.\n"
+	.string "We're neighbors, y'know?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If POKéMON get tired, take them to\n"
@@ -295,5 +295,5 @@ Route101_Text_WildPokemonInTallGrass:
 Route101_Text_RouteSign:
 	.string "SOUTHERN BLVD\p"
     .string "{UP_ARROW} SR 441\n"
-	.string "{RIGHT_ARROW} WEST PALM BEACH$"
 
+.string "{RIGHT_ARROW} WEST PALM BEACH$"

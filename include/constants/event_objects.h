@@ -176,7 +176,7 @@
 #define OBJ_EVENT_GFX_DIAMOND_CUSHION            172
 #define OBJ_EVENT_GFX_BALL_CUSHION               173
 #define OBJ_EVENT_GFX_GRASS_CUSHION              174
-#define OBJ_EVENT_GFX_FIRE_CUSHION               175
+#define OBJ_EVENT_GFX_DACHSBUN                   175
 #define OBJ_EVENT_GFX_WATER_CUSHION              176
 #define OBJ_EVENT_GFX_BIG_SNORLAX_DOLL           177
 #define OBJ_EVENT_GFX_BIG_RHYDON_DOLL            178

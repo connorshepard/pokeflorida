@@ -1962,6 +1962,15 @@
 	special SetTotemBoost
 	.endm
 
+    @ Calls a msgbox with a desired mugshot, string and msgbox type.
+	.macro msgbox_mugshot msgText:req, msgType:req, mugshot:req
+	setvar VAR_0x8000, \mugshot
+	callnative DrawMugshot
+	msgbox \msgText, \msgType
+	callnative ClearMugshot
+	.endm
+
+
 	@ useful totem boost macros
 	.macro totemboost_atk1 battler:req
 	settotemboost \battler, 1

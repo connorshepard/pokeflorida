@@ -278,6 +278,7 @@
 #define SE_PIKE_CURTAIN_CLOSE             267 // SE_CURTAIN
 #define SE_PIKE_CURTAIN_OPEN              268 // SE_CURTAIN1
 #define SE_SUDOWOODO_SHAKE                269 // SE_USSOKI
+#define END_SE                            SE_SUDOWOODO_SHAKE
 // Bard SFX
 #define PH_TRAP_BLEND                     271
 #define PH_TRAP_HELD                      272
@@ -332,11 +333,11 @@
 #define PH_NURSE_SOLO                     321
 
 #define SOUND_EFFECTS_END                 PH_NURSE_SOLO
-
-#define SONGS_START                       (SOUND_EFFECTS_END + 1)
+#define START_MUS                         (SOUND_EFFECTS_END + 1)
+#define SONGS_START                       (SOUND_EFFECTS_END + 2)
 // Ruby & Sapphire Music 
-#define RS_MUSIC_START                    SONGS_START
 
+#define RS_MUSIC_START                    SONGS_START
 #define MUS_LITTLEROOT_TEST               322 // MUS_TETSUJI
 #define MUS_GSC_ROUTE38                   323 // MUS_FIELD13
 #define MUS_CAUGHT                        324 // MUS_KACHI22
@@ -459,7 +460,7 @@
 
 // FireRed & LeafGreen Music 
 #define RG_MUSIC_START                    (RS_MUSIC_END + 1)
-
+#define END_MUS                           MUS_RG_TEACHY_TV_MENU
 #define MUS_RG_FOLLOW_ME                  439 // MUS_RG_ANNAI
 #define MUS_RG_GAME_CORNER                440 // MUS_RG_SLOT
 #define MUS_RG_ROCKET_HIDEOUT             441 // MUS_RG_AJITO

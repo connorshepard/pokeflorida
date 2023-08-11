@@ -260,7 +260,7 @@ Route111_EventScript_SunTrigger::
 
 Route111_EventScript_SandstormTrigger::
 	setweather WEATHER_SANDSTORM
-	fadenewbgm MUS_DESERT
+	fadenewbgm MUS_ROUTE110
 	doweather
 	end
 

@@ -846,9 +846,10 @@ gText_PokemonCenterSign::
 	.string "POKéMON CENTER$"
 
 gText_MomOrDadMightLikeThisProgram::
-	.string "A film is playing on HBO Max.\n"
-	.string "Something about galactic jihad?\p"
-	.string "Better get going!$"
+	.string "A boy is having a vision in the desert.\n"
+	.string "Holy war spreading across the universe \p"
+    .string "like unquenchable fire.\p"
+	.string "Well, better get going!$"
 
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"

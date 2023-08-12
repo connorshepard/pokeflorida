@@ -60,6 +60,7 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
+    playse SE_PIN
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
@@ -289,11 +290,11 @@ LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2:
 
 PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "MOM: See, {PLAYER}?\n"
-	.string "Isn't it nice in here, too?$"
+	.string "Doesn't that A/C feel amazing?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "The mover's POKéMON do all the work\n"
-	.string "of moving us in and cleaning up after.\l"
+	.string "Hmm. The mover POKéMON are unpacking for us,\n"
+	.string "but I don't think DACHSBUN likes them.\l"
 	.string "This is so convenient!\p"
 	.string "{PLAYER}, your room is upstairs.\n"
 	.string "Go check it out, dear!\p"
@@ -376,10 +377,10 @@ PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "report live from WEST PALM BEACH.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
-	.string "There is a movie on TV.\p"
+	.string "There's a movie on TV.\p"
 	.string "A boy is choking out a girl\n"
-	.string "on a beach in a sea of blood.\p"
-	.string "What's Mom watching in here?!$"
+	.string "on a beach while a red sea churns. \p"
+	.string "Well, better get going!$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
 	.string "It's the instruction booklet for the\n"

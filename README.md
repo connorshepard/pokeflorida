@@ -1,8 +1,8 @@
-# pokeemerald Expansion
+# Pokémon Florida
 
-## What is the pokeemerald Expansion?
+## What is Pokémon Florida?
 
-The Pokeemerald Expansion is a collection of feature branches that can be integrated into existing [pokeemerald](https://github.com/pret/pokeemerald) projects.
+The Pokémon Florida is a romhack of Pokémon Emerald with a new region based on the state of Florida, USA. 
 
 ## What features are included?
 - Upgraded battle engine.

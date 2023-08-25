@@ -47,15 +47,16 @@ Route102_Text_AllenPostBattle:
 	.string "I wish I would win soon…$"
 
 Route102_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+	.string "Have you tried fishing\n"
+	.string "in front of this canal yet?\p"
+	.string "You'd be surprised you'll find.$"
 
 Route102_Text_RickDefeated:
-	.string "Ow! Down and out!$"
+	.string "Meh, I'll stick to fishing.$"
 
 Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+	.string "If you lock eyes with a fish,\n"
+	.string "you have to fight it! It's a rule!$"
 
 Route102_Text_TianaIntro:
 	.string "I'm going to keep winning and aim\n"

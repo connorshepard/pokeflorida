@@ -287,6 +287,12 @@ static bool8 MugshotTrainerPic_Init(struct Sprite *);
 static bool8 MugshotTrainerPic_Slide(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideSlow(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideOffscreen(struct Sprite *);
+static void Task_May(u8);
+static void Task_Brendan(u8);
+static bool8 May_Init(struct Task *);
+static bool8 May_SetGfx(struct Task *);
+static bool8 Brendan_Init(struct Task *);
+static bool8 Brendan_SetGfx(struct Task *);
 
 static s16 sDebug_RectangularSpiralData;
 static u8 sTestingTransitionId;
@@ -335,6 +341,12 @@ static const u32 sFrontierSquares_EmptyBg_Tileset[] = INCBIN_U32("graphics/battl
 static const u32 sFrontierSquares_Shrink1_Tileset[] = INCBIN_U32("graphics/battle_transitions/frontier_square_3.4bpp.lz");
 static const u32 sFrontierSquares_Shrink2_Tileset[] = INCBIN_U32("graphics/battle_transitions/frontier_square_4.4bpp.lz");
 static const u32 sFrontierSquares_Tilemap[] = INCBIN_U32("graphics/battle_transitions/frontier_squares.bin");
+static const u32 sMay_Palette[] = INCBIN_U32("graphics/battle_transitions/may.gbapal");
+static const u32 sMay_Tileset[] = INCBIN_U32("graphics/battle_transitions/may.4bpp");
+static const u16 sMay_Tilemap[] = INCBIN_U16("graphics/battle_transitions/may.bin");
+static const u32 sBrendan_Palette[] = INCBIN_U32("graphics/battle_transitions/brendan.gbapal");
+static const u32 sBrendan_Tileset[] = INCBIN_U32("graphics/battle_transitions/brendan.4bpp");
+static const u16 sBrendan_Tilemap[] = INCBIN_U16("graphics/battle_transitions/brendan.bin");
 
 // All battle transitions use the same intro
 static const TaskFunc sTasks_Intro[B_TRANSITION_COUNT] =
@@ -388,6 +400,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
+    [B_TRANSITION_MAY] = Task_May,
+    [B_TRANSITION_BRENDAN] = Task_Brendan,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -496,6 +510,26 @@ static const TransitionStateFunc sPokeballsTrail_Funcs[] =
     PokeballsTrail_Init,
     PokeballsTrail_Main,
     PokeballsTrail_End
+};
+
+static const TransitionStateFunc sMay_Funcs[] =
+{
+    May_Init,
+    May_SetGfx,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
+};
+
+static const TransitionStateFunc sBrendan_Funcs[] =
+{
+    Brendan_Init,
+    Brendan_SetGfx,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    PatternWeave_CircularMask
 };
 
 #define NUM_POKEBALL_TRAILS 5
@@ -1373,6 +1407,16 @@ static void Task_Kyogre(u8 taskId)
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+static void Task_May(u8 taskId)
+{
+    while (sMay_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
+static void Task_Brendan(u8 taskId)
+{
+    while (sBrendan_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void InitPatternWeaveTransition(struct Task *task)
 {
     s32 i;
@@ -1422,6 +1466,34 @@ static bool8 Magma_Init(struct Task *task)
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
     LZ77UnCompVram(sTeamMagma_Tileset, tileset);
     LoadPalette(sEvilTeam_Palette, BG_PLTT_ID(15), sizeof(sEvilTeam_Palette));
+
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 May_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    InitPatternWeaveTransition(task);
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sMay_Tileset, tileset, sizeof(sMay_Tileset));
+    LoadPalette(sMay_Palette, BG_PLTT_ID(15), sizeof(sMay_Palette));
+
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 Brendan_Init(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    InitPatternWeaveTransition(task);
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    CpuCopy16(sBrendan_Tileset, tileset, sizeof(sBrendan_Tileset));
+    LoadPalette(sBrendan_Palette, BG_PLTT_ID(15), sizeof(sBrendan_Palette));
 
     task->tState++;
     return FALSE;
@@ -1536,6 +1608,46 @@ static bool8 Regirock_SetGfx(struct Task *task)
 
     task->tState++;
     return FALSE;
+}
+
+static bool8 May_SetGfx(struct Task *task)
+{
+    s16 i, j;
+    u16 *tilemap, *tileset;
+    const u16 *mayMap;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    mayMap = sMay_Tilemap;
+    for (i = 0; i < 20; i++)
+    {
+        for (j = 0; j < 30; j++, mayMap++)
+            SET_TILE(tilemap, i, j, *mayMap);
+    }
+
+    SetSinWave(gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
+
+    task->tState++;
+    return TRUE;
+}
+
+static bool8 Brendan_SetGfx(struct Task *task)
+{
+    s16 i, j;
+    u16 *tilemap, *tileset;
+    const u16 *brendanMap;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    brendanMap = sBrendan_Tilemap;
+    for (i = 0; i < 20; i++)
+    {
+        for (j = 0; j < 30; j++, brendanMap++)
+            SET_TILE(tilemap, i, j, *brendanMap);
+    }
+
+    SetSinWave(gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
+
+    task->tState++;
+    return TRUE;
 }
 
 #define tTimer data[1]

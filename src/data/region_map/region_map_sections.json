@@ -10,7 +10,7 @@
     },
     {
       "map_section": "MAPSEC_OLDALE_TOWN",
-      "name": "OLDALE TOWN",
+      "name": "West Palm Beach",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -146,7 +146,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_103",
-      "name": "ROUTE 103",
+      "name": "State Road 441",
       "x": 4,
       "y": 8,
       "width": 4,

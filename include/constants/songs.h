@@ -742,8 +742,12 @@
 #define MUS_HG_OBTAIN_CASTLE_POINTS       705 // Received Castle Points!
 #define MUS_HG_OBTAIN_B_POINTS            706 // Received Battle Points!
 #define MUS_HG_WIN_MINIGAME               707 // Cleared Wobbuffet Pop!
-
-#define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
+#define MUS_DP_VS_UXIE_MESPRIT_AZELF      708
+#define MUS_DP_VS_RIVAL                   709
+#define MUS_DP_LAKE                       710
+#define MUS_DP_VALOR_LAKEFRONT_DAY        711
+#define MUS_DP_POKE_CENTER_NIGHT          712
+#define HG_MUSIC_END                      MUS_DP_POKE_CENTER_NIGHT
 
 #define SONGS_END                         HG_MUSIC_END
 

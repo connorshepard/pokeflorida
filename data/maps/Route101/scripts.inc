@@ -1,5 +1,6 @@
 .set LOCALID_BIRCH, 2
 .set LOCALID_WINGULL, 4
+.set LOCALID_SUDOWOODO, 7
 
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
@@ -71,8 +72,43 @@ Route101_EventScript_PreventExitNorth::
 	releaseall
 	end
 
+Route101_EventScript_Sudowoodo::
+	lock
+	faceplayer
+    setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
+    playse SE_SUDOWOODO_SHAKE
+    applymovement LOCALID_SUDOWOODO, Route101_Movement_PreventExitSouth
+    msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
+    closemessage
+	waitse
+	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+    setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
+    setwildbattle SPECIES_SUDOWOODO, 5
+    dowildbattle
+    specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route101_Movement_Unused1
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route101_Movement_Unused1
+    release
+	end
+
 Route101_Movement_PreventExitSouth:
-	walk_up
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
 	step_end
 
 Route101_Movement_PreventExitWest:
@@ -193,9 +229,9 @@ Route101_Movement_BirchFaceZigzagoon:
 	step_end
 
 Route101_Movement_Unused1:
-	walk_up
-	walk_up
-	step_end
+	setflag FLAG_DEFEATED_SUDOWOODO
+	goto Common_EventScript_RemoveStaticPokemon
+	end
 
 Route101_Movement_Unused2:
 	walk_up
@@ -204,8 +240,9 @@ Route101_Movement_Unused2:
 	step_end
 
 Route101_EventScript_Youngster::
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
-	end
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end   
 
 Route101_EventScript_Boy::
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
@@ -258,12 +295,12 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "Aww, Jesus!$"
+	.string "UH OH!$"
 
 Route101_Text_PleaseHelp:
 	.string "Hey, new kid!\n"
 	.string "Get this thing offa me!\p"
-	.string "Grab a POKéMON, quick,\n"
+	.string "Grab a Pokémon, quick,\n"
 	.string "I've got a bag full of gators.$"
 
 Route101_Text_DontLeaveMe:
@@ -271,29 +308,27 @@ Route101_Text_DontLeaveMe:
 	.string "For God's sake's, help me out.$"
 
 Route101_Text_YouSavedMe:
-	.string "MANGROVE: Phew...!\p"
-	.string "Well, I dunno what the hell that was.\n"
-	.string "Well, thanks a million, buddy. \p"
+	.string "Mangrove: Phew...!\p"
+	.string "Man, I dunno what the hell that was.\n"
+	.string "Thanks for the help there, buddy. \p"
 	.string "I'm more of a lover than a fighter, haha.\n"
 	.string "Well, anyways.\p"
 	.string "What's good?\p"
-	.string "Enjoying FLorida, {PLAYER}{KUN}?\p"
+	.string "Enjoying Florida, {PLAYER}{KUN}?\p"
 	.string "Tell ya what, head over to mine later.\n"
 	.string "We're neighbors, y'know?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER close by.$"
+	.string "If you lock eyes with a fish,\n"
+	.string "you have to fight it! It's a rule!$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "Want to hear something kinda\n"
+	.string "weird that I just noticed?\p"
+	.string "That orange tree down the road...\n"
+	.string "it wasn't there earlier, and it shakes.$"
 
 Route101_Text_RouteSign:
-	.string "SOUTHERN BLVD\p"
+	.string "Southern Blvd\p"
     .string "{UP_ARROW} SR 441\n"
-
-.string "{RIGHT_ARROW} WEST PALM BEACH$"
+    .string "{RIGHT_ARROW} West Palm Beach$"

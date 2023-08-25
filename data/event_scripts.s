@@ -949,9 +949,9 @@ gText_PlayerFoundOneTMHM::
 	.string "{STR_VAR_2}!$"
 
 gText_Sudowoodo_Attacked::
-	.string "The weird tree doesn't like the\n"
-	.string "WAILMER PAIL!\p"
-	.string "The weird tree attacked!$"
+	.string "Wait, that's not an orange tree,\n"
+	.string "it's a Sudowoodo!\p"
+	.string "It's shaking with rage!$"
 
 gText_LegendaryFlewAway::
 	.string "The {STR_VAR_1} flew away!$"
@@ -1005,6 +1005,58 @@ Common_EventScript_LegendaryFlewAway::
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
 	release
 	end
+    
+EventScript_DoWonderTrade::
+	lock
+	faceplayer
+   	msgbox EventScript_DoWonderTrade_Text_OfferWonderTrade, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_YesWonderTrade
+	goto_if_eq VAR_RESULT, NO, EventScript_WonderTrade_Goodbye
+    end
+	
+
+EventScript_YesWonderTrade::
+	msgbox EventScript_DoWonderTrade_Text_YesWonderTrade, MSGBOX_DEFAULT
+    special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge EventScript_End
+	copyvar VAR_0x8005, VAR_0x8004
+	special CreateWonderTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox EventScript_DoWonderTrade_Text_WannaDoAnotherWonderTrade, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq EventScript_YesWonderTrade
+	msgbox EventScript_DoWonderTrade_Text_Done, MSGBOX_DEFAULT
+	closemessage
+
+EventScript_WonderTrade_Goodbye::
+	msgbox EventScript_DoWonderTrade_Text_NoWonderTrade, MSGBOX_DEFAULT
+	closemessage
+    
+EventScript_End:
+	end
+    
+EventScript_DoWonderTrade_Text_OfferWonderTrade:
+	.string "Hello, and welcome to the\n"
+	.string "Wonder Trade Network.\p"
+	.string "You can trade your Pokémon for a\n"
+	.string "random Pokémon from a random trainer.\p"
+	.string "Would you like try a Wonder Trade today?$"
+
+EventScript_DoWonderTrade_Text_YesWonderTrade:
+	.string "Please select a Pokémon to trade.$"
+
+EventScript_DoWonderTrade_Text_NoWonderTrade:
+	.string "Come back anytime, okay?$"
+
+EventScript_DoWonderTrade_Text_WannaDoAnotherWonderTrade:
+	.string "Would you like to do\nanother Wonder Trade?$"
+
+EventScript_DoWonderTrade_Text_Done:
+	.string "Enjoy your new Pokémon!$"
+
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
@@ -1061,3 +1113,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/SaffronCity/scripts.inc"

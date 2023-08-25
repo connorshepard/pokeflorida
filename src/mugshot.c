@@ -31,12 +31,19 @@ static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/mugshots/may.gbapal");
 static const u32 sMugshotImg_Brendan[] = INCBIN_U32("graphics/mugshots/brendan.4bpp.lz");
 static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/mugshots/brendan.gbapal");
 
+static const u32 sMugshotImg_Sidney[] = INCBIN_U32("graphics/mugshots/sidney.4bpp.lz");
+static const u16 sMugshotPal_Sidney[] = INCBIN_U16("graphics/mugshots/sidney.gbapal");
+
+static const u32 sMugshotImg_Wayne[] = INCBIN_U32("graphics/mugshots/wayne.4bpp.lz");
+static const u16 sMugshotPal_Wayne[] = INCBIN_U16("graphics/mugshots/wayne.gbapal");
+
 static const struct Mugshot sMugshots[] = {
     //ADD YOUR MUGSHOTS HERE
  [MUGSHOT_MANGROVE] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mangrove, .palette = sMugshotPal_Mangrove},
  [MUGSHOT_MAY] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_May, .palette = sMugshotPal_May},
- [MUGSHOT_BRENDAN] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Brendan, .palette = sMugshotPal_Brendan}
-    
+ [MUGSHOT_BRENDAN] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Brendan, .palette = sMugshotPal_Brendan},
+ [MUGSHOT_SIDNEY] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Sidney, .palette = sMugshotPal_Sidney},
+ [MUGSHOT_WAYNE] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Wayne, .palette = sMugshotPal_Wayne}
 };
 
 

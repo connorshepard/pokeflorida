@@ -174,7 +174,7 @@ LittlerootTown_Movement_MomExitHouse:
 
 LittlerootTown_Movement_MomApproachPlayerAtTruck:
 	walk_down
-	walk_in_place_faster_left
+    walk_in_place_faster_left
 	step_end
 
 LittlerootTown_Movement_MomApproachDoor:
@@ -288,7 +288,7 @@ LittlerootTown_EventScript_GoodLuck::
 LittlerootTown_EventScript_NeedPokemonTriggerLeft::
 	lock
     faceplayer
-	call LittlerootTown_EventScript_DangerousWithoutPokemon
+	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_EventScript_DangerousWithoutPokemon
 	releaseall
 	end
 
@@ -432,39 +432,23 @@ LittlerootTown_EventScript_PlayersHouseSignFemale::
 LittlerootTown_EventScript_GiveRunningShoesTrigger0::
 	lockall
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_MOM, 10, 9
+	setobjectxy LOCALID_MOM, 11, 7
 	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger1::
-	lockall
-	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_MOM, 11, 9
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger2::
-	lockall
-	setvar VAR_0x8008, 2
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger3::
-	lockall
-	setvar VAR_0x8008, 3
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger4::
-	lockall
-	setvar VAR_0x8008, 4
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger5::
-	lockall
-	setvar VAR_0x8008, 5
-	goto LittlerootTown_EventScript_GiveRunningShoesTrigger
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger::
@@ -474,6 +458,7 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
+    playse SE_POKENAV_CALL
 	msgbox LittlerootTown_Text_WaitPlayer, MSGBOX_DEFAULT
 	closemessage
 	checkplayergender
@@ -508,20 +493,10 @@ LittlerootTown_EventScript_MomNoticePlayerFemale::
 
 LittlerootTown_EventScript_MomApproachPlayerMale::
 	call_if_eq VAR_0x8008, 0, LittlerootTown_EventScript_MomApproachPlayer0
-	call_if_eq VAR_0x8008, 1, LittlerootTown_EventScript_MomApproachPlayer1
-	call_if_eq VAR_0x8008, 2, LittlerootTown_EventScript_MomApproachPlayerMale2
-	call_if_eq VAR_0x8008, 3, LittlerootTown_EventScript_MomApproachPlayerMale3
-	call_if_eq VAR_0x8008, 4, LittlerootTown_EventScript_MomApproachPlayerMale4
-	call_if_eq VAR_0x8008, 5, LittlerootTown_EventScript_MomApproachPlayerMale5
 	return
 
 LittlerootTown_EventScript_MomApproachPlayerFemale::
 	call_if_eq VAR_0x8008, 0, LittlerootTown_EventScript_MomApproachPlayer0
-	call_if_eq VAR_0x8008, 1, LittlerootTown_EventScript_MomApproachPlayer1
-	call_if_eq VAR_0x8008, 2, LittlerootTown_EventScript_MomApproachPlayerFemale2
-	call_if_eq VAR_0x8008, 3, LittlerootTown_EventScript_MomApproachPlayerFemale3
-	call_if_eq VAR_0x8008, 4, LittlerootTown_EventScript_MomApproachPlayerFemale4
-	call_if_eq VAR_0x8008, 5, LittlerootTown_EventScript_MomApproachPlayerFemale5
 	return
 
 LittlerootTown_EventScript_MomApproachPlayer0::
@@ -719,12 +694,11 @@ LittlerootTown_EventScript_MomReturnHomeFemale5::
 	return
 
 LittlerootTown_Movement_MomApproachPlayer0:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+    walk_in_place_faster_left
 	step_end
 
 LittlerootTown_Movement_MomApproachPlayer1:
@@ -897,9 +871,10 @@ LittlerootTown_EventScript_SetReceivedRunningShoes::
 LittlerootTown_EventScript_GiveRunningShoes::
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
-	message LittlerootTown_Text_SwitchShoesWithRunningShoes
+	msgbox_mugshot LittlerootTown_Text_SwitchShoesWithRunningShoes, MSGBOX_DEFAULT, MUGSHOT_SIDNEY
 	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+    additem ITEM_MYSTIC_TICKET, 1
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
@@ -915,7 +890,7 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "I still can't believe that you rode\n"
 	.string "in the moving truck.\p"
 	.string "Well, this is Wellington.\p"
-	.string "Horse POKéMON are everywhere!\n"
+	.string "Horse Pokémon are everywhere!\n"
 	.string "Other than that, though...\p"
 	.string "It's a little sleepy, but it looks like\n"
 	.string "an easy place to live, don't you think?\p"
@@ -923,52 +898,52 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "Let's go inside.$"
 
 LittlerootTown_Text_WaitPlayer:
-	.string "MOM: Wait, {PLAYER}!$"
+	.string "Your phone is ringing!$"
 
 LittlerootTown_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
-	.string "say hi to PROF. MANGROVE?\p"
+	.string "say hi to Prof. Mangrove?\p"
 	.string "Oh! I love your gator!\n"
-	.string "You got it from the PROF? How nice!\p"
-	.string "Can't be a trainer without one!\n"
-	.string "You look good together with POKéMON!\p"
-	.string "Here, honey! If you're going out on an\n"
-	.string "adventure, wear these RUNNING SHOES.\p"
-	.string "They'll put a zip in your step!$"
+	.string "You got it from him? How nice!\p"
+	.string "You're already making friends!\n"
+	.string "Dad's going to be thrilled.\p"
+	.string "Oh! Check your email:\n"
+	.string "I've got a surprise for you.\p"
+	.string "An annual pass to Sidney World!$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
-	.string "{PLAYER} switched shoes with the\n"
-	.string "RUNNING SHOES.$"
+	.string "{PLAYER}'s really excited to go\n"
+	.string "to Sidney World this summer!$"
 
 LittlerootTown_Text_ExplainRunningShoes:
-	.string "MOM: {PLAYER}, those shoes came with\n"
-	.string "instructions.\p"
-	.string "“Press the B Button while wearing these\n"
-	.string "RUNNING SHOES to run extra-fast!\p"
-	.string "“Slip on these RUNNING SHOES and race\n"
-	.string "in the great outdoors!”$"
+	.string "MOM: {PLAYER}, are you going to go\n"
+	.string "to Sidney World with your Pokémon?\p"
+	.string "Orlando's a long way from here.\n"
+	.string "I'll be a little worried about you,\p"
+	.string "traveling across the state all alone,\n"
+	.string "so make sure and call me sometime!$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
 	.string "POKéMON now…\l"
-	.string "Your father will be overjoyed.\p"
-	.string "…But please be careful.\n"
-	.string "If anything happens, you can come home.\p"
-	.string "Go on, go get them, honey!$"
+	.string "Make sure to go visit your dad\p"
+	.string "before you start heading north.\n"
+	.string "He's working in West Palm right now.\p"
+	.string "Okay, love you honey! Talk later!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "Wellington used to be a swamp\n"
-	.string "until, like, 1953?\p"
-	.string "The power of science is crazy!$"
+	.string "Wellington used to be a swamp,\n"
+	.string "until it was drained in 1953.\p"
+	.string "The power of science is nutty!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "MANGROVE spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. MANGROVE ever\n"
-	.string "go home?$"
+	.string "Hey! Just moved to Wellington,\n"
+	.string "huh? I bet you've never been through\l"
+	.string "a hurricane before, have you?\p"
+	.string "This place gets whomped every few years.\n"
+	.string "It's been a while, so I'm nervous...$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -977,41 +952,41 @@ LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
 	.string "It's dangerous if you don't have\n"
-	.string "your own POKéMON.$"
+	.string "your own Pokémon.$"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "Um, hi!\p"
-	.string "There are scary POKéMON outside!\n"
+	.string "There are scary Pokémon outside!\n"
 	.string "I can hear their cries!\p"
 	.string "I want to go see what's going on,\n"
-	.string "but I don't have any POKéMON…\p"
+	.string "but I don't have any Pokémon…\p"
 	.string "Can you go see what's happening\n"
 	.string "for me?$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "You saved PROF. MANGROVE!\n"
+	.string "You saved Mangrove!\n"
 	.string "Nicely done!$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
-	.string "Are you going to catch POKéMON?\n"
+	.string "Are you going to catch Pokémon?\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "VILLAGE OF WELLINGTON\n"
+	.string "Village of Wellington\n"
 	.string "“The Winter Polo Capital of the World”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. MANGROVE'S POKéMON LAB$"
+	.string "Mike Mangrove's Pokémon/Climate Lab$"
     
 LittlerootTown_Text_Polo:
 	.string "PALM BEACH POLO & COUNTRY CLUB\n"
     .string "Closed for the summer.$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. MANGROVE'S HOUSE$"
+	.string "The Mangroves' House$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "MANGROVE: Well, well, {PLAYER}{KUN}!\n"

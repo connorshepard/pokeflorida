@@ -67,6 +67,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "pokedex.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -98,6 +99,7 @@ struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate;
 
 void TryLoseFansFromPlayTime(void);
 void SetPlayerGotFirstFans(void);
+void FillPokedex(void);
 u16 GetNumFansOfPlayerInTrainerFanClub(void);
 
 static void RecordCyclingRoadResults(u32, u8);
@@ -4206,4 +4208,14 @@ void SetPlayerGotFirstFans(void)
 u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
+}
+
+void FillPokedex(void)
+{
+    u16 i;
+
+    for (i = SPECIES_BULBASAUR; i <= SPECIES_ENAMORUS_THERIAN; i++)
+    {
+        GetSetPokedexFlag(i, FLAG_SET_SEEN);
+    }
 }

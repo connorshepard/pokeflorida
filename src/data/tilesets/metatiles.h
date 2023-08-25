@@ -210,3 +210,9 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_palm[] = INCBIN_U16("data/tilesets/primary/palm/metatiles.bin");
 const u16 gMetatileAttributes_palm[] = INCBIN_U16("data/tilesets/primary/palm/metatile_attributes.bin");
+
+const u16 gMetatiles_SaffronCity[] = INCBIN_U16("data/tilesets/secondary/saffron_city/metatiles.bin");
+const u16 gMetatileAttributes_SaffronCity[] = INCBIN_U16("data/tilesets/secondary/saffron_city/metatile_attributes.bin");
+
+const u16 gMetatiles_FireRedLeafgreen[] = INCBIN_U16("data/tilesets/primary/fire_red_leafgreen/metatiles.bin");
+const u16 gMetatileAttributes_FireRedLeafgreen[] = INCBIN_U16("data/tilesets/primary/fire_red_leafgreen/metatile_attributes.bin");

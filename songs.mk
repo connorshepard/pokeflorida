@@ -1766,3 +1766,18 @@ $(MID_SUBDIR)/mus_hg_obtain_b_points.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_hg_win_minigame.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V091 -p5
+
+$(MID_SUBDIR)/mus_dp_vs_uxie_mesprit_azelf.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V078
+    
+$(MID_SUBDIR)/mus_dp_vs_rival.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V088
+    
+$(MID_SUBDIR)/mus_dp_lake.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V088
+    
+$(MID_SUBDIR)/mus_dp_valor_lakefront_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V096 -X
+    
+$(MID_SUBDIR)/mus_dp_poke_center_night.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V127

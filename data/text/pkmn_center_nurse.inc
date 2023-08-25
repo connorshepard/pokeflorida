@@ -10,7 +10,6 @@ gText_IllTakeYourPkmn::
 	.string "for a few seconds.$"
 
 gText_RestoredPkmnToFullHealth::
-	.string "Thank you for waiting.\p"
 	.string "We've restored your POKéMON\n"
 	.string "to full health.$"
 

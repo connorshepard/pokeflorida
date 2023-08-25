@@ -349,7 +349,7 @@ const struct Item gItems[] =
 
     [ITEM_POTION] =
     {
-        .name = _("Potion"),
+        .name = _("Publix Sub"),
         .itemId = ITEM_POTION,
         .price = 200,
         .holdEffectParam = 20,
@@ -9516,7 +9516,7 @@ const struct Item gItems[] =
 
     [ITEM_MYSTIC_TICKET] =
     {
-        .name = _("Mystic Ticket"),
+        .name = _("Sidney Ticket"),
         .itemId = ITEM_MYSTIC_TICKET,
         .price = 0,
         .description = sMysticTicketDesc,

@@ -142,9 +142,9 @@ static const u8 sCherishBallDesc[] = _(
 
 // Medicine
 static const u8 sPotionDesc[] = _(
-    "Restores the HP of\n"
-    "a Pokémon by\n"
-    "20 points.");
+    "A yummy Cuban sub\n"
+    "sandwich, heals\n"
+    "HP by 20 points.");
 
 static const u8 sSuperPotionDesc[] = _(
     "Restores the HP of\n"
@@ -3665,9 +3665,9 @@ static const u8 sEonTicketDesc[] = _(
     "southern island.");
 
 static const u8 sMysticTicketDesc[] = _(
-    "A ticket required\n"
-    "to board the ship\n"
-    "to Navel Rock.");
+    "An annual pass for\n"
+    "visiting Orlando's \n"
+    "Sidney World parks.");
 
 static const u8 sAuroraTicketDesc[] = _(
     "A ticket required\n"

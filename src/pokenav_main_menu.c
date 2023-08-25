@@ -588,7 +588,7 @@ static void InitPokenavMainMenuResources(void)
 
     Pokenav_AllocAndLoadPalettes(sSpinningNavgearPalettes);
     menu->palettes = ~1 & ~(0x10000 << IndexOfSpritePaletteTag(0));
-    spriteId = CreateSprite(&sSpinningPokenavSpriteTemplate, 220, 12, 0);
+    spriteId = CreateSprite(&sSpinningPokenavSpriteTemplate, 220, 16, 0);
     menu->spinningPokenav = &gSprites[spriteId];
 }
 

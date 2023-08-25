@@ -277,26 +277,26 @@ PlayersHouse_2F_Text_ClockIsStopped:
 	.string "Better set it and start it!$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "MOM: {PLAYER}, how do you like your\n"
+	.string "Mom: {PLAYER}, how do you like your\n"
 	.string "new room?\p"
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"
 	.string "downstairs, too.\p"
-	.string "POKéMON movers are so convenient!\p"
+	.string "Pokémon movers are so convenient!\p"
 	.string "Oh, make sure to check your PC\n"
-	.string "and pull out your KEY ITEMS.$"
+	.string "and pull out your key items.$"
 
 PlayersHouse_2F_Text_Notebook:
-	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
-	.string "The remaining pages are blank…$"
+	.string "It's a book titled Weird Florida.\p"
+	.string "Did you know?\n"
+	.string "10% of Floridian Pokémon are shiny.\p"
+	.string "Did you know?\n"
+	.string "Pokémon Florida is currently in alpha.\p"
+	.string "Hmm. This region sure is different!$"
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
-	.string "FLORIDA region map.$"
+	.string "Florida region map.$"
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo Switch.\p"

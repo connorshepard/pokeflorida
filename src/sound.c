@@ -420,6 +420,7 @@ void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode)
     switch (mode)
     {
     case CRY_MODE_NORMAL:
+        volume= 127;   
         break;
     case CRY_MODE_DOUBLES:
         length = 20;

@@ -16,11 +16,11 @@ Text_Vase:
 	.string "But, it was empty.$"
 
 Text_EmptyTrashCan:
-	.string "It's empty.$"
+	.string "Nope! There's only trash here.$"
 
 Text_ShopShelf:
-	.string "The shelves brim with all sorts of\n"
-	.string "POKéMON merchandise.$"
+	.string "All your favorite foods are here,\n"
+	.string "but it's kinda overpriced.$"
 
 Text_Blueprint:
 	.string "A blueprint of some sort?\n"

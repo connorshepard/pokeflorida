@@ -11,10 +11,11 @@
 #include "main.h"
 #include "overworld.h"
 #include "wallclock.h"
+#include "clock.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
-
+void FastForwardTime(s16, s16);
 static void InitTimeBasedEvents(void)
 {
     FlagSet(FLAG_SYS_CLOCK_SET);
@@ -83,4 +84,17 @@ void StartWallClock(void)
 {
     SetMainCallback2(CB2_StartWallClock);
     gMain.savedCallback = ReturnFromStartWallClock;
+}
+
+void FastForwardTime(s16 daysToUpdateDay, s16 hoursToGrowBerries){
+// Runs the UpdatePerDay function as if daysToUpdateDay days have passed and grows the berries by hoursToGrowBerries
+        s16 daysBerry = hoursToGrowBerries / 24;
+        s8 hoursBerry = hoursToGrowBerries % 24;
+        struct Time localTimeOffset;
+        localTimeOffset.days = *GetVarPointer(VAR_DAYS) + daysToUpdateDay;
+        UpdatePerDay(&localTimeOffset);
+        localTimeOffset = gSaveBlock2Ptr->lastBerryTreeUpdate;
+        localTimeOffset.days += daysBerry;
+        localTimeOffset.hours += hoursBerry;
+        UpdatePerMinute(&localTimeOffset);
 }

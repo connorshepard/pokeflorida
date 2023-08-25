@@ -579,6 +579,7 @@ EWRAM_DATA static bool8 sAutoActionOn = 0;
 EWRAM_DATA static bool8 sJustOpenedBag = 0;
 
 // Main tasks
+void EnterPokeStorage(u8);
 static void Task_InitPokeStorage(u8);
 static void Task_PlaceMon(u8);
 static void Task_ChangeScreen(u8);
@@ -750,7 +751,8 @@ static void SpriteCB_ItemIcon_ToMon(struct Sprite *);
 static void SpriteCB_ItemIcon_SwapToHand(struct Sprite *);
 static void SpriteCB_ItemIcon_HideParty(struct Sprite *);
 static void SpriteCB_ItemIcon_SwapToMon(struct Sprite *);
-
+void EnterPokeStorage(u8 boxOption);
+    
 // Cursor
 static void CreateCursorSprites(void);
 static void ToggleCursorAutoAction(void);
@@ -1667,14 +1669,22 @@ static void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;
-
-    SetVBlankCallback(NULL);
-    taskId = CreateTask(Task_PCMainMenu, 80);
-    gTasks[taskId].tState = 0;
-    gTasks[taskId].tSelectedOption = sPreviousBoxOption;
-    Task_PCMainMenu(taskId);
-    SetVBlankCallback(vblankCb);
-    FadeInFromBlack();
+	if (FlagGet(FLAG_POKEMONPCMENU)==TRUE)
+	{
+		SetVBlankCallback(NULL);
+		taskId = CreateTask(Task_PCMainMenu, 80);
+		gTasks[taskId].tState = 0;
+		gTasks[taskId].tSelectedOption = sPreviousBoxOption;
+		Task_PCMainMenu(taskId);
+		SetVBlankCallback(vblankCb);
+		FadeInFromBlack();
+	}
+	else {
+		UnlockPlayerFieldControls();
+		ScriptContext_Enable();
+		SetVBlankCallback(CB2_ReturnToField);
+		FadeInFromBlack();
+	}
 }
 
 #undef tState
@@ -2003,7 +2013,6 @@ static void CB2_PokeStorage(void)
     AnimateSprites();
     BuildOamBuffer();
 }
-
 void EnterPokeStorage(u8 boxOption)
 {
     ResetTasks();
@@ -2024,6 +2033,7 @@ void EnterPokeStorage(u8 boxOption)
         SetMainCallback2(CB2_PokeStorage);
     }
 }
+
 
 static void CB2_ReturnToPokeStorage(void)
 {

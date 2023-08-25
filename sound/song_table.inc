@@ -709,6 +709,11 @@ gSongTable::
 	song mus_hg_obtain_castle_points, 2, 2
 	song mus_hg_obtain_b_points, 2, 2
 	song mus_hg_win_minigame, 2, 2
+    song mus_dp_vs_uxie_mesprit_azelf, 0, 0
+    song mus_dp_vs_rival, 0, 0
+    song mus_dp_lake, 0, 0
+    song mus_dp_valor_lakefront_day, 0, 0
+    song mus_dp_poke_center_night, 0, 0
 
 	.align 2
 dummy_song_header:

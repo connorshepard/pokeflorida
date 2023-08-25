@@ -5,5 +5,8 @@
 #define MUGSHOT_MANGROVE 0
 #define MUGSHOT_MAY 1
 #define MUGSHOT_BRENDAN 2
+#define MUGSHOT_SIDNEY 3
+#define MUGSHOT_WAYNE 4
+
 
 #endif

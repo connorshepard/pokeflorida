@@ -73,6 +73,10 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+static void QueueAnimTiles_General_Pony(u16);
+static void QueueAnimTiles_General_Rapid(u16);
+static void QueueAnimTiles_General_Mudbray(u16);
+static void QueueAnimTiles_General_Mudsdale(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -86,6 +90,50 @@ const u16 *const gTilesetAnims_General_Flower[] = {
     gTilesetAnims_General_Flower_Frame2
 };
 
+const u16 gTilesetAnims_General_Pony_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/pony_0.4bpp");
+const u16 gTilesetAnims_General_Pony_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/pony_1.4bpp");
+
+const u16 gTilesetAnims_General_Rapid_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/rap_0.4bpp");
+const u16 gTilesetAnims_General_Rapid_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/rap_1.4bpp");
+
+const u16 gTilesetAnims_General_Mudbray_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/mud_0.4bpp");
+const u16 gTilesetAnims_General_Mudbray_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/mud_1.4bpp");
+
+const u16 gTilesetAnims_General_Mudsdale_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/dale_0.4bpp");
+const u16 gTilesetAnims_General_Mudsdale_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/dale_1.4bpp");
+
+const u16 *const gTilesetAnims_General_Pony[] = {
+    gTilesetAnims_General_Pony_Frame0,
+    gTilesetAnims_General_Pony_Frame0,
+    gTilesetAnims_General_Pony_Frame0,
+    gTilesetAnims_General_Pony_Frame1,
+    gTilesetAnims_General_Pony_Frame1
+};
+
+const u16 *const gTilesetAnims_General_Rapid[] = {
+    gTilesetAnims_General_Rapid_Frame0,
+    gTilesetAnims_General_Rapid_Frame0,
+    gTilesetAnims_General_Rapid_Frame1,
+    gTilesetAnims_General_Rapid_Frame1,
+    gTilesetAnims_General_Rapid_Frame1
+};
+
+const u16 *const gTilesetAnims_General_Mudbray[] = {
+    gTilesetAnims_General_Mudbray_Frame0,
+    gTilesetAnims_General_Mudbray_Frame0,
+    gTilesetAnims_General_Mudbray_Frame0,
+    gTilesetAnims_General_Mudbray_Frame1,
+    gTilesetAnims_General_Mudbray_Frame1
+};
+
+const u16 *const gTilesetAnims_General_Mudsdale[] = {
+    gTilesetAnims_General_Mudsdale_Frame0,
+    gTilesetAnims_General_Mudsdale_Frame0,
+    gTilesetAnims_General_Mudsdale_Frame1,
+    gTilesetAnims_General_Mudsdale_Frame1,
+    gTilesetAnims_General_Mudsdale_Frame1
+};
+
 const u16 gTilesetAnims_General_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/water/0.4bpp");
 const u16 gTilesetAnims_General_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/water/1.4bpp");
 const u16 gTilesetAnims_General_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/water/2.4bpp");
@@ -94,6 +142,8 @@ const u16 gTilesetAnims_General_Water_Frame4[] = INCBIN_U16("data/tilesets/prima
 const u16 gTilesetAnims_General_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/general/anim/water/5.4bpp");
 const u16 gTilesetAnims_General_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/general/anim/water/6.4bpp");
 const u16 gTilesetAnims_General_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/general/anim/water/7.4bpp");
+
+
 
 const u16 *const gTilesetAnims_General_Water[] = {
     gTilesetAnims_General_Water_Frame0,
@@ -641,12 +691,44 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_Waterfall(timer / 16);
     if (timer % 16 == 4)
         QueueAnimTiles_General_LandWaterEdge(timer / 16);
+    if (timer % 16 == 5)
+        QueueAnimTiles_General_Pony(timer / 16);
+    if (timer % 16 == 6)
+        QueueAnimTiles_General_Rapid(timer / 16);
+    if (timer % 16 == 7)
+        QueueAnimTiles_General_Mudbray(timer / 16);
+    if (timer % 16 == 8)
+        QueueAnimTiles_General_Mudsdale(timer / 16);
 }
 
 static void TilesetAnim_Building(u16 timer)
 {
     if (timer % 8 == 0)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
+}
+
+static void QueueAnimTiles_General_Pony(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Pony);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Pony[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(912)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_Rapid(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Rapid);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Rapid[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(896)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_Mudbray(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Mudbray);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Mudbray[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(944)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_Mudsdale(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Mudsdale);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Mudsdale[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(928)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_General_Flower(u16 timer)

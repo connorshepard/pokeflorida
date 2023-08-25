@@ -90,6 +90,7 @@ Route101_EventScript_Sudowoodo::
     specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route101_Movement_Unused1
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route101_Movement_Unused1
+    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route101_Movement_Unused1
     release
 	end
 

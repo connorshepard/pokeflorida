@@ -1109,10 +1109,9 @@ const u8 gAzumarillPokedexText[] = _(
     "enemies to spot in water.");
 
 const u8 gSudowoodoPokedexText[] = _(
-    "It mimics a tree to avoid being attacked\n"
-    "by enemies. But since its forelegs\n"
-    "remain green throughout the year, it is\n"
-    "easily identified as a fake in the winter.");
+    "Whenever a tropical storm approaches,\n"
+    "Sudowoodo seek refuge in nearby cities,\n"
+    "offering fresh oranges for shelter.");
 
 const u8 gPolitoedPokedexText[] = _(
     "The curled hair on its head proves its\n"

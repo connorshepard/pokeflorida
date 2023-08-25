@@ -283,6 +283,10 @@ OldaleTown_EventScript_GymSign::
     
 OldaleTown_EventScript_RivalTrigger1::
 	end
+    
+OldaleTown_EventScript_Scout::
+    msgbox OldaleTown_Text_Cookies, MSGBOX_NPC
+	end
 
 OldaleTown_Movement_RivalApproachPlayer1:
 	walk_left
@@ -380,3 +384,11 @@ OldaleTown_Text_BrendanLetsGoBack:
     .string "West Palm Beach Gym\n"
 	.string "(I also build and supply pools)\p"
 	.string "- Gym Leader Wayne$"
+    
+OldaleTown_Text_Cookies
+	.string "Hey, you!\n"
+	.string "Buy some Girl Scout Cookies!\p"
+	.string "We have Thin Mints, Samoas,\n"
+	.string "S'mores, and Lemon-ups!\p"
+	.string "They're $10.00 each\n"
+	.string "them, okay?$"

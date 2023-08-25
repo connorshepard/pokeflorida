@@ -40,25 +40,19 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	end
 
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
-	.string "That PC in the corner there is\n"
-	.string "for any POKéMON TRAINER to use.\p"
-	.string "Naturally, that means you're welcome\n"
-	.string "to use it, too.$"
+	.string "Back in my day, we needed the PCs\n"
+	.string "at Pokémon Centers to access boxes.\p"
+	.string "The {PKMN} Boxes app is convenient,\n"
+	.string "but in some places, it doesn't work.$"
 
 OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
-	.string "POKéMON CENTERS are great!\p"
-	.string "You can use their services as much\n"
-	.string "as you like, and it's all for free.\l"
-	.string "You never have to worry!$"
-
-OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "But they say they're still making\n"
-	.string "adjustments.$"
+	.string "Have you tried Wonder Trading yet?\p"
+	.string "You know, it's the only way to find\n"
+	.string "Pokémon who aren't native to Florida.\l"
+	.string "Be careful of invasive species, though.$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "I traded POKéMON right away.$"
+	.string "We always use this Pokémon Center as\n"
+	.string "a hurricane shelter in times of need.\p"
+	.string "They don't turn away anyone!$"
 

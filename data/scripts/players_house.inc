@@ -15,8 +15,6 @@ PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	call_if_eq VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale
     playmoncry SPECIES_STOUTLAND, CRY_MODE_NORMAL
     waitmoncry
-    playmoncry SPECIES_STOUTLAND, CRY_MODE_NORMAL
-    waitmoncry
 	msgbox PlayersHouse_1F_Text_MoversPokemonGoSetClock, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4

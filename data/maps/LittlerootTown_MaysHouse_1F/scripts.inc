@@ -227,6 +227,13 @@ LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2::
 	waitmovement 0
 	return
 
+LittlerootTown_MaysHouse_1F_EventScript_Dachsbun::
+    faceplayer
+    playmoncry SPECIES_HERDIER, CRY_MODE_NORMAL
+    msgbox RivalsHouse_1F_Text_PetDachsbun, MSGBOX_DEFAULT
+	closemessage
+	return
+
 LittlerootTown_MaysHouse_1F_Movement_MayApproachPlayer0:
 	walk_in_place_faster_left
 	walk_left
@@ -336,7 +343,7 @@ RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "Like child, like father.\p"
 	.string "My husband is as wild about Pokémon\n"
 	.string "as our child.\p"
-	.string "If he's not at his LAB, he's likely\n"
+	.string "If he's not at his lab, he's likely\n"
 	.string "scrabbling about in grassy places.$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
@@ -346,7 +353,7 @@ RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 	.string "to visit, {PLAYER}{KUN}.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
-	.string "Oh, {RIVAL} went out to ROUTE 103\n"
+	.string "Oh, {RIVAL} went out to SR 441.\n"
 	.string "just a little while ago.\p"
 	.string "Like father, like child.\n"
 	.string "{RIVAL} can't stay quietly at home.$"
@@ -407,3 +414,7 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 	.string "Hi, neighbor!\p"
 	.string "Do you already have your\n"
 	.string "own Pokémon?$"
+    
+RivalsHouse_1F_Text_PetDachsbun:
+    .string "You pet Dachsbun's little head.\n"
+	.string "Dachsbun woofs cheerfully.$"

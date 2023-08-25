@@ -3619,9 +3619,9 @@ static const u8 sPowderJarDesc[] = _(
     "a Berry Crusher.");
 
 static const u8 sWailmerPailDesc[] = _(
-    "A tool used for\n"
-    "watering Berries\n"
-    "and plants.");
+    "A classic summer toy,\n"
+    "it squirts water with\n"
+    "surprising force.");
 
 static const u8 sPokeRadarDesc[] = _(
     "A tool used to\n"

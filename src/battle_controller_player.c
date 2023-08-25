@@ -1807,10 +1807,6 @@ static void MoveSelectionDisplayMoveDescription(void)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_DESCRIPTION);
     CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_FULL);
 }
-static void MulModifier(u16 *modifier, u16 val)
-{
-	*modifier = UQ_4_12_TO_INT((*modifier * val) + UQ_4_12_ROUND);
-}
 
 u8 TypeEffectiveness(struct ChooseMoveStruct *moveInfo, u8 targetId)
 {

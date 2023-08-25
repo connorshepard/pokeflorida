@@ -238,6 +238,12 @@ LittlerootTown_BrendansHouse_1F_EventScript_BrendanGoUpstairs2::
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_1F_Movement_BrendanGoUpstairs2
 	waitmovement 0
 	return
+    
+LittlerootTown_BrendansHouse_1F_EventScript_Dachsbun::
+    faceplayer
+    playmoncry SPECIES_HERDIER, CRY_MODE_NORMAL
+    msgbox PlayersHouse_1F_Text_PetDachsbun, MSGBOX_DEFAULT
+	return
 
 LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit0:
 	delay_16
@@ -347,7 +353,7 @@ PlayersHouse_1F_Text_TakeCareHoney:
 	.string "Mom: Take care, honey!$"
 
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
-	.string "Mom: Oh? Did Dad give you that BADGE?\p"
+	.string "Mom: Oh? Did Dad give you that badge?\p"
 	.string "Then here's something from your MOM!$"
 
 PlayersHouse_1F_Text_DontPushYourselfTooHard:
@@ -439,3 +445,7 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "Mom: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+PlayersHouse_1F_Text_PetDachsbun:
+    .string "You pet Dachsbun's little head.\n"
+	.string "Dachsbun woofs cheerfully.$"

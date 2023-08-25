@@ -310,8 +310,8 @@ Route103_Text_MayLetsBattle:
 	.string "a Pokémon as a gift.\p"
 	.string "Since we're here, let's have a quick\n"
 	.string "battle!\p"
-	.string "I'll give you a taste of what being\n"
-	.string "a Florida Man is like.$"
+	.string "Do you think you have what it takes\n"
+	.string "to be a Florida Man?$"
 
 Route103_Text_MayDefeated:
 	.string "Wow! That's great!\n"
@@ -336,8 +336,8 @@ Route103_Text_BrendanLetsBattle:
 	.string "…Oh, yeah, Dad gave you a Pokémon.\p"
 	.string "Since we're here, how about a little\n"
 	.string "battle?\p"
-	.string "I'll teach you what a Florida Man's\n"
-	.string "about!$"
+	.string "I'll teach you what being a Florida\n"
+	.string "Man is all about!$"
 
 Route103_Text_BrendanDefeated:
 	.string "Huh, {PLAYER}, you're not too shabby.$"
@@ -354,7 +354,7 @@ Route103_Text_BrendanTimeToHeadBack:
 
 Route103_Text_ShouldHaveBroughtPotion:
 	.string "My Pokémon is staggeringly tired…\n"
-	.string "I should have brought a POTION…$"
+	.string "I should have brought a Pub Sub…$"
 
 Route103_Text_ShortcutToOldale:
 	.string "If you cross the sea from here,\n"

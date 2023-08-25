@@ -4628,7 +4628,11 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
     return substruct;
 }
 
-u32 GetMonData(struct Pokemon *mon, s32 field, u8 *data)
+/* GameFreak called GetMonData with either 2 or 3 arguments, for type
+ * safety we have a GetMonData macro (in include/pokemon.h) which
+ * dispatches to either GetMonData2 or GetMonData3 based on the number
+ * of arguments. */
+u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
 {
     u32 ret;
 
@@ -4686,7 +4690,13 @@ u32 GetMonData(struct Pokemon *mon, s32 field, u8 *data)
     return ret;
 }
 
-u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
+u32 GetMonData2(struct Pokemon *mon, s32 field) __attribute__((alias("GetMonData3")));
+
+/* GameFreak called GetBoxMonData with either 2 or 3 arguments, for type
+ * safety we have a GetBoxMonData macro (in include/pokemon.h) which
+ * dispatches to either GetBoxMonData2 or GetBoxMonData3 based on the
+ * number of arguments. */
+u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 {
     s32 i;
     u32 retVal = 0;
@@ -5041,6 +5051,8 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
 
     return retVal;
 }
+
+u32 GetBoxMonData2(struct BoxPokemon *boxMon, s32 field) __attribute__((alias("GetBoxMonData3")));
 
 #define SET8(lhs) (lhs) = *data
 #define SET16(lhs) (lhs) = data[0] + (data[1] << 8)
@@ -6502,13 +6514,16 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 if (MonKnowsMove(mon, gEvolutionTable[species][i].param))
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            case EVO_MOVE_TYPE:
-                for (j = 0; j < 4; j++)
+            case EVO_FRIENDSHIP_MOVE_TYPE:
+                if (friendship >= 220)
                 {
-                    if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[species][i].param)
+                    for (j = 0; j < MAX_MON_MOVES; j++)
                     {
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                        break;
+                        if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[species][i].param)
+                        {
+                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                            break;
+                        }
                     }
                 }
                 break;
@@ -8599,7 +8614,7 @@ bool32 TryFormChange(u32 monId, u32 side, u16 method)
     targetSpecies = GetFormChangeTargetSpecies(&party[monId], method, 0);
 
     if (targetSpecies == SPECIES_NONE && gBattleStruct != NULL)
-        targetSpecies = gBattleStruct->changedSpecies[monId];
+        targetSpecies = gBattleStruct->changedSpecies[side][monId];
 
     if (targetSpecies != SPECIES_NONE)
     {

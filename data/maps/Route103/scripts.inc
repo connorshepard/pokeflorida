@@ -353,7 +353,7 @@ Route103_Text_BrendanTimeToHeadBack:
 	.string "We should head back to the LAB.$"
 
 Route103_Text_ShouldHaveBroughtPotion:
-	.string "My Pokémon is staggeringly tired…\n"
+	.string "My Pokémon and I are starving…\n"
 	.string "I should have brought a Pub Sub…$"
 
 Route103_Text_ShortcutToOldale:

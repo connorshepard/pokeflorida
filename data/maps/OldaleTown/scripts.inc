@@ -385,7 +385,7 @@ OldaleTown_Text_BrendanLetsGoBack:
 	.string "(I also build and supply pools)\p"
 	.string "- Gym Leader Wayne$"
     
-OldaleTown_Text_Cookies
+OldaleTown_Text_Cookies:
 	.string "Hey, you!\n"
 	.string "Buy some Girl Scout Cookies!\p"
 	.string "We have Thin Mints, Samoas,\n"

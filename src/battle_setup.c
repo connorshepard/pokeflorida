@@ -833,6 +833,7 @@ u8 GetWildBattleTransition(void)
     }
 }
 
+    
 u8 GetTrainerBattleTransition(void)
 {
     u8 minPartyCount;
@@ -840,6 +841,8 @@ u8 GetTrainerBattleTransition(void)
     u8 enemyLevel;
     u8 playerLevel;
 
+  if (gTrainers[gTrainerBattleOpponent_A].hasCustomTransition)
+        return gTrainers[gTrainerBattleOpponent_A].transition;
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         return B_TRANSITION_CHAMPION;
 

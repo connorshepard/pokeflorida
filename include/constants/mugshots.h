@@ -7,6 +7,8 @@
 #define MUGSHOT_BRENDAN 2
 #define MUGSHOT_SIDNEY 3
 #define MUGSHOT_WAYNE 4
-
+#define MUGSHOT_SUDOWOODO 5
+#define MUGSHOT_TANDEMAUS 6
+#define MUGSHOT_BURROWL 7
 
 #endif

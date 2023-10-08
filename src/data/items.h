@@ -775,14 +775,13 @@ const struct Item gItems[] =
 
     [ITEM_LAVA_COOKIE] =
     {
-        .name = _("Lava Cookie"),
+        .name = _("Scout Cookies"),
         .itemId = ITEM_LAVA_COOKIE,
         .price = 350,
         .description = sLavaCookieDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
         .flingPower = 30,
     },
 

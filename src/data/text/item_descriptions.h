@@ -318,9 +318,9 @@ static const u8 sRageCandyBarDesc[] = _(
     "one Pokémon.");
 
 static const u8 sLavaCookieDesc[] = _(
-    "A local specialty\n"
-    "that heals all\n"
-    "status problems.");
+    "Pricy, but tasty.\n"
+    "Raises Pokémon's\n"
+    "level by one.");
 
 static const u8 sOldGateauDesc[] = _(
     "Heals all the\n"
@@ -3619,8 +3619,8 @@ static const u8 sPowderJarDesc[] = _(
     "a Berry Crusher.");
 
 static const u8 sWailmerPailDesc[] = _(
-    "A classic summer toy,\n"
-    "it squirts water with\n"
+    "A classic pool toy,\n"
+    "shoots water with\n"
     "surprising force.");
 
 static const u8 sPokeRadarDesc[] = _(

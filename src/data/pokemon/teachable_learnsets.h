@@ -6707,7 +6707,7 @@ static const u16 sFurretTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sHoothootTeachableLearnset[] = {
+static const u16 sOwlballTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_DOUBLE_TEAM,
@@ -6742,7 +6742,7 @@ static const u16 sHoothootTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sNoctowlTeachableLearnset[] = {
+static const u16 sBurrowlTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_DOUBLE_TEAM,

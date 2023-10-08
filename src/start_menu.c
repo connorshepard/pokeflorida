@@ -46,6 +46,7 @@
 #include "union_room.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
+#include "rtc.h"
 #include "constants/songs.h"
 #include "pokemon_storage_system.h"
 
@@ -93,6 +94,7 @@ EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
 EWRAM_DATA static u8 sSaveDialogTimer = 0;
 EWRAM_DATA static bool8 sSavingComplete = FALSE;
 EWRAM_DATA static u8 sSaveInfoWindowId = 0;
+EWRAM_DATA static u8 sCurrentTimeWindowId = 0;
 
 // Menu action callbacks
 static bool8 StartMenuPokedexCallback(void);
@@ -218,6 +220,9 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .baseBlock = 8
 };
 
+static const struct WindowTemplate sCurrentTimeWindowTemplate = {0, 1, 17, 4, 2, 0xF, 48};
+
+
 // Local functions
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
@@ -252,6 +257,8 @@ static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
+static void ShowCurrentTimeWindow(void);
+static void UpdateClockDisplay(void);
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
@@ -451,6 +458,13 @@ static void RemoveExtraStartMenuWindows(void)
         ClearStdWindowAndFrameToTransparent(sBattlePyramidFloorWindowId, FALSE);
         RemoveWindow(sBattlePyramidFloorWindowId);
     }
+    	if (FlagGet(FLAG_SYS_CLOCK_SET))
+	{
+		ClearStdWindowAndFrameToTransparent(sCurrentTimeWindowId, FALSE);
+        CopyWindowToVram(sCurrentTimeWindowId, 2);
+        RemoveWindow(sCurrentTimeWindowId);
+		FlagClear(FLAG_TEMP_5);
+	}
 }
 
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
@@ -508,6 +522,8 @@ static bool32 InitStartMenuStep(void)
             ShowSafariBallsWindow();
         if (InBattlePyramid())
             ShowPyramidFloorWindow();
+            		if (FlagGet(FLAG_SYS_CLOCK_SET))
+			             ShowCurrentTimeWindow();
         sInitStartMenuData[0]++;
         break;
     case 4:
@@ -599,6 +615,7 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
+    UpdateClockDisplay();
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
@@ -1478,4 +1495,33 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 {
     list[*pos] = newEntry;
     (*pos)++;
+}
+
+static void ShowCurrentTimeWindow(void)
+{
+	RtcCalcLocalTime();
+	sCurrentTimeWindowId = AddWindow(&sCurrentTimeWindowTemplate);
+	PutWindowTilemap(sCurrentTimeWindowId);
+	DrawStdWindowFrame(sCurrentTimeWindowId, FALSE);
+	FlagSet(FLAG_TEMP_5);
+	ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
+	AddTextPrinterParameterized(sCurrentTimeWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	CopyWindowToVram(sCurrentTimeWindowId, 2);
+}
+
+void UpdateClockDisplay(void)
+{
+	if (!FlagGet(FLAG_TEMP_5))
+		return;
+	RtcCalcLocalTime();
+	ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+	if (gLocalTime.seconds % 2)
+		StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
+	else
+		StringExpandPlaceholders(gStringVar4, gText_CurrentTimeOff);
+	AddTextPrinterParameterized(sCurrentTimeWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	CopyWindowToVram(sCurrentTimeWindowId, 2);
 }

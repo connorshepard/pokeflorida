@@ -2,9 +2,7 @@ RustboroCity_PokemonSchool_MapScripts::
 	.byte 0
 
 RustboroCity_PokemonSchool_EventScript_Blackboard::
-	lockall
-	msgbox RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges, MSGBOX_DEFAULT
-	goto RustboroCity_PokemonSchool_EventScript_ChooseBlackboardTopic
+	msgbox RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges, MSGBOX_SIGN
 	end
 
 RustboroCity_PokemonSchool_EventScript_ChooseBlackboardTopic::
@@ -71,17 +69,18 @@ RustboroCity_PokemonSchool_EventScript_SchoolKidM::
 	end
 
 RustboroCity_PokemonSchool_EventScript_StudentNotebook::
-	msgbox RustboroCity_PokemonSchool_Text_StudentsNotes, MSGBOX_SIGN
+	msgbox_mugshot RustboroCity_PokemonSchool_Text_StudentsNotes, MSGBOX_SIGN, MUGSHOT_WAYNE
+    msgbox_mugshot RustboroCity_PokemonSchool_Text_Sudowoodo, MSGBOX_SIGN, MUGSHOT_SUDOWOODO
+    msgbox_mugshot RustboroCity_PokemonSchool_Text_Tandemaus, MSGBOX_SIGN, MUGSHOT_TANDEMAUS
+    msgbox_mugshot RustboroCity_PokemonSchool_Text_Burrowl, MSGBOX_SIGN, MUGSHOT_BURROWL
 	end
 
 RustboroCity_PokemonSchool_EventScript_Teacher::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_QUICK_CLAW, RustboroCity_PokemonSchool_EventScript_GaveQuickClaw
-	call_if_eq VAR_FACING, DIR_EAST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast
-	call_if_eq VAR_FACING, DIR_WEST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsWest
 	msgbox RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw, MSGBOX_DEFAULT
-	giveitem ITEM_QUICK_CLAW
+	giveitem ITEM_WAILMER_PAIL
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
@@ -161,15 +160,7 @@ RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 	step_end
 
 RustboroCity_PokemonSchool_EventScript_Scott::
-	lock
-	faceplayer
-	goto_if_set FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE, RustboroCity_PokemonSchool_EventScript_ScottWatchStudents
-	goto_if_set FLAG_MET_SCOTT_RUSTBORO, RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready
-	goto_if_set FLAG_BADGE01_GET, RustboroCity_PokemonSchool_EventScript_ScottGreetHasBadge
-	msgbox RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut, MSGBOX_DEFAULT
-	addvar VAR_SCOTT_STATE, 1
-	setflag FLAG_MET_SCOTT_RUSTBORO
-	release
+	msgbox RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry, MSGBOX_NPC
 	end
 
 RustboroCity_PokemonSchool_EventScript_ScottSpokeAlready::
@@ -200,23 +191,23 @@ RustboroCity_PokemonSchool_EventScript_ScottWatchStudents::
 	end
 
 RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges:
-	.string "The blackboard lists status changes\n"
-	.string "that may affect POKéMON in battle.$"
+	.string "Today's lesson is on the board.\n"
+	.string "Nobody's paying any attention...$"
 
 RustboroCity_PokemonSchool_Text_ReadWhichTopic:
 	.string "Which topic do you want to read?$"
 
 RustboroCity_PokemonSchool_Text_ExplainPoison:
-	.string "If a POKéMON is poisoned, it will\n"
+	.string "If a Pokémon is poisoned, it will\n"
 	.string "steadily lose HP.\p"
 	.string "The effects of poison remain after\n"
 	.string "a battle.\p"
-	.string "A poisoned POKéMON's HP will drop\n"
+	.string "A poisoned Pokémon's HP will drop\n"
 	.string "while it is traveling.\p"
 	.string "Heal a poisoning using an ANTIDOTE.$"
 
 RustboroCity_PokemonSchool_Text_ExplainParalysis:
-	.string "If a POKéMON becomes paralyzed,\n"
+	.string "If a Pokémon becomes paralyzed,\n"
 	.string "its SPEED drops.\p"
 	.string "It may also not be able to move while\n"
 	.string "it is in battle.\p"
@@ -224,9 +215,9 @@ RustboroCity_PokemonSchool_Text_ExplainParalysis:
 	.string "Cure it using a PARLYZ HEAL.$"
 
 RustboroCity_PokemonSchool_Text_ExplainSleep:
-	.string "If a POKéMON falls asleep, it will be\n"
+	.string "If a Pokémon falls asleep, it will be\n"
 	.string "unable to attack.\p"
-	.string "A POKéMON may wake up on its own,\n"
+	.string "A Pokémon may wake up on its own,\n"
 	.string "but if a battle ends while it is\l"
 	.string "sleeping, it will stay asleep.\p"
 	.string "Wake it up using an AWAKENING.$"
@@ -238,68 +229,66 @@ RustboroCity_PokemonSchool_Text_ExplainBurn:
 	.string "Cure a burn using a BURN HEAL.$"
 
 RustboroCity_PokemonSchool_Text_ExplainFreeze:
-	.string "If a POKéMON is frozen, it becomes\n"
+	.string "If a Pokémon is frozen, it becomes\n"
 	.string "completely helpless.\p"
 	.string "It will remain frozen after battle.\n"
 	.string "Thaw it out using an ICE HEAL.$"
 
 RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
-	.string "Students who don't study get a little\n"
-	.string "taste of my QUICK CLAW.\p"
-	.string "Whether or not you are a good student \n"
-	.string "will be evident from the way you use\l"
-	.string "this item.$"
+	.string "Unacceptable! We found a gun in\n"
+	.string "a students' backpack this morning.\p"
+	.string "Luckily, it turned out that it's\n"
+	.string "just a squirt gun. Here, get this\l"
+	.string "out of my classroom right now!$"
 
 RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
-	.string "A POKéMON holding the QUICK CLAW will\n"
-	.string "occasionally speed up and get to move\l"
-	.string "before its opponent.\p"
-	.string "There are many other items that are\n"
-	.string "meant to be held by POKéMON.\p"
-	.string "Just those alone will give you many\n"
-	.string "topics to study!$"
+	.string "If that kid pulled it out in class,\n"
+	.string "who knows what would have happened?\p"
+	.string "I swear, kids are getting bolder\n"
+	.string "lately, no fear of authority at all.$"
 
 RustboroCity_PokemonSchool_Text_TradingRightNow:
-	.string "I'm trading POKéMON with my friend\n"
-	.string "right now.$"
+	.string "I'm trading Pokémon with my friend\n"
+	.string "right now. He's from Japan!$"
 
 RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
-	.string "I always wanted a SEEDOT, and\n"
-	.string "I'm finally getting one!$"
-
+	.string "Sudowoodo, Maushold, Ursaluna...\n"
+	.string "The Floridian Pokémon I've seen\l"
+    .string "since moving here have been crazy!$"
+    
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
-	.string "POKéMON can hold items, but they\n"
-	.string "don't know what to do with man-made\l"
-	.string "items like POTION and ANTIDOTE.$"
+	.string "I know it's an art school, but our\n"
+	.string "teacher is SO dramatic. I think she\l"
+	.string "needs a cigarette... or a boyfriend.$"
 
 RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
-	.string "You know how some POKéMON moves can\n"
-	.string "confuse a POKéMON?\p"
-	.string "A confused POKéMON will sometimes\n"
-	.string "attack itself without meaning to.\p"
-	.string "But once it leaves battle, it will\n"
-	.string "return to normal.$"
+	.string "I'm directing a student film for\n"
+	.string "my thesis project this semester.\p"
+	.string "My parents bought me new cameras,\n"
+	.string "a new computer, and a helicopter!\p"
+	.string "Hmm? What's the movie about? Uhh...\n"
+	.string "I still haven't decided yet.$"
 
 RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry:
-	.string "A POKéMON holding a BERRY will heal\n"
-	.string "itself…\p"
-	.string "There are many kinds of items that\n"
-	.string "POKéMON can hold…\p"
-	.string "Boy, it sure is hard taking notes\n"
-	.string "down…$"
+	.string "Welp, the teacher called my parents\n"
+	.string "about that toy I brought to school.\p"
+	.string "I wasn't even gonna use it here,\n"
+	.string "I wanted to mess with a Sudowoodo.\p"
+	.string "If you didn't know, Sudowoodo hate\n"
+	.string "getting wet more than anything!$"
 
 RustboroCity_PokemonSchool_Text_StudentsNotes:
-	.string "It's this student's notebook…\p"
-	.string "POKéMON are to be caught using\n"
-	.string "POKé BALLS.\p"
-	.string "Up to six POKéMON can accompany\n"
-	.string "a TRAINER.\p"
-	.string "A TRAINER is someone who catches\n"
-	.string "POKéMON, raises them, and battles\l"
-	.string "with them.\p"
-	.string "A TRAINER's mission is to defeat\n"
-	.string "the strong TRAINERS who await\l"
-	.string "challengers in POKéMON GYMS.$"
+	.string "A student's sketchbook...\p"
+	.string "She drew some Floridian Pokémon.$"
+	
+RustboroCity_PokemonSchool_Text_Sudowoodo:    
+	.string "Is that a Sudowoodo?$"
+    
+RustboroCity_PokemonSchool_Text_Tandemaus:    
+	.string "It looks like Tandemaus.$"
+    
+RustboroCity_PokemonSchool_Text_Burrowl:    
+	.string "Reminds me of Noctowl...$"
 
 RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
 	.string "Hello? Didn't we meet before?\n"
@@ -309,11 +298,11 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut:
 	.string "I've been traveling everywhere in\n"
 	.string "search of outstanding TRAINERS.\p"
 	.string "More specifically, I'm looking for\n"
-	.string "POKéMON battle experts.\p"
+	.string "Pokémon battle experts.\p"
 	.string "So, what brings you to this SCHOOL?\n"
 	.string "Are you a TRAINER, too?\p"
 	.string "The first thing you should do is to\n"
-	.string "have a POKéMON learn the move CUT.\p"
+	.string "have a Pokémon learn the move CUT.\p"
 	.string "If I remember correctly, someone in\n"
 	.string "this town has CUT.$"
 
@@ -339,7 +328,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "I've been traveling everywhere in\n"
 	.string "search of outstanding TRAINERS.\p"
 	.string "More specifically, I'm looking for\n"
-	.string "POKéMON battle experts.\p"
+	.string "Pokémon battle experts.\p"
 	.string "Oh, what's that?\n"
 	.string "It's a STONE BADGE, isn't it?\p"
 	.string "That's pretty impressive, I'd say, for\n"

@@ -7,16 +7,16 @@
         {
           "type": "land_mons",
           "encounter_rates": [
+            5,
+            5,
+            1,
+            25,
             10,
+            1,
+            17,
             10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10
+            1,
+            25
           ]
         },
         {
@@ -128,7 +128,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_HOOTHOOT"
+                "species": "SPECIES_OWLBALL"
               }
             ]
           },

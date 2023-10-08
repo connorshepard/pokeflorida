@@ -8,6 +8,7 @@
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
+#include "battle_transition.h"
 
 const u16 gMinigameDigits_Pal[] = INCBIN_U16("graphics/link/minigame_digits.gbapal");
 const u32 gMinigameDigits_Gfx[] = INCBIN_U32("graphics/link/minigame_digits.4bpp.lz");
@@ -61,6 +62,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_May[] =
     gTrainerBackPic_May + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE,
     gTrainerBackPic_May + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE,
     gTrainerBackPic_May + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE,
+    gTrainerBackPic_May + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_Red[] =

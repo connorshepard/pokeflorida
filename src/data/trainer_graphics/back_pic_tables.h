@@ -1,7 +1,7 @@
 const struct MonCoords gTrainerBackPicCoords[] =
 {
     [TRAINER_BACK_PIC_BRENDAN] = {.size = 8, .y_offset = 4},
-    [TRAINER_BACK_PIC_MAY] = {.size = 8, .y_offset = 4},
+    [TRAINER_BACK_PIC_MAY] = {.size = 8, .y_offset = 5},
     [TRAINER_BACK_PIC_RED] = {.size = 8, .y_offset = 5},
     [TRAINER_BACK_PIC_LEAF] = {.size = 8, .y_offset = 5},
     [TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN] = {.size = 8, .y_offset = 4},

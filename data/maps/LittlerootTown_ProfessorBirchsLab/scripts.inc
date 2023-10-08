@@ -114,7 +114,7 @@ LittlerootTown_ProfessorBirchsLab_OnFrame:
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	lockall
 	bufferleadmonspeciesname STR_VAR_1
-	message LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
+	msgbox_mugshot LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon, MSGBOX_DEFAULT, MUGSHOT_MANGROVE
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare

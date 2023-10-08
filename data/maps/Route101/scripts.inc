@@ -1,6 +1,5 @@
 .set LOCALID_BIRCH, 2
 .set LOCALID_WINGULL, 4
-.set LOCALID_SUDOWOODO, 7
 
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
@@ -72,27 +71,6 @@ Route101_EventScript_PreventExitNorth::
 	releaseall
 	end
 
-Route101_EventScript_Sudowoodo::
-	lock
-	faceplayer
-    setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
-    playse SE_SUDOWOODO_SHAKE
-    applymovement LOCALID_SUDOWOODO, Route101_Movement_PreventExitSouth
-    msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
-    closemessage
-	waitse
-	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-    setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
-    setwildbattle SPECIES_SUDOWOODO, 5
-    dowildbattle
-    specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route101_Movement_Unused1
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route101_Movement_Unused1
-    goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route101_Movement_Unused1
-    release
-	end
 
 Route101_Movement_PreventExitSouth:
 	face_right
@@ -229,11 +207,6 @@ Route101_Movement_BirchFaceZigzagoon:
 	walk_in_place_fast_left
 	step_end
 
-Route101_Movement_Unused1:
-	setflag FLAG_DEFEATED_SUDOWOODO
-	goto Common_EventScript_RemoveStaticPokemon
-	end
-
 Route101_Movement_Unused2:
 	walk_up
 	walk_left
@@ -290,6 +263,28 @@ Route101_EventScript_HideMayInBedroom::
 Route101_EventScript_HideBrendanInBedroom::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	return
+    
+Route101_EventScript_Fruits::
+	lock
+	faceplayer
+	msgbox Route101_Text_FruitGuy, MSGBOX_DEFAULT
+	waitmessage
+	pokemart Route101_Mart_Fruits
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+Route101_Mart_Fruits:
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_SITRUS_BERRY
+	.2byte ITEM_PECHA_BERRY
+	.2byte ITEM_CHESTO_BERRY
+	.2byte ITEM_RAWST_BERRY
+    .2byte ITEM_CHERI_BERRY
+    .2byte ITEM_NONE
+	release
+	end    
 
 Route101_Movement_BirchApproachPlayer:
 	walk_right
@@ -333,3 +328,8 @@ Route101_Text_RouteSign:
 	.string "Southern Blvd\p"
     .string "{UP_ARROW} SR 441\n"
     .string "{RIGHT_ARROW} West Palm Beach$"
+    
+Route101_Text_FruitGuy:
+	.string "Hello, hi. Do you want to buy some\n"
+    .string "buy some fresh fruit from me?\l"
+    .string "I have all kinds, fresh picked today.$"    

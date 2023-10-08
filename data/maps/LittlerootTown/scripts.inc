@@ -76,7 +76,7 @@ LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
 	return
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
-	setobjectxyperm LOCALID_MOM, 14, 13
+	setobjectxyperm LOCALID_MOM, 14, 12
 	return
 
 LittlerootTown_EventScript_SetTwinPos::

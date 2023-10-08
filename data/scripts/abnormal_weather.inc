@@ -208,8 +208,6 @@ AbnormalWeather_EventScript_CleanupMapTiles::
 	case ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_EventScript_CleanupRoute115East
 	case ABNORMAL_WEATHER_ROUTE_116_NORTH, AbnormalWeather_EventScript_CleanupRoute116North
 	case ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_EventScript_CleanupRoute116South
-	case ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_CleanupRoute118East
-	case ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_CleanupRoute118West
 	case ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_CleanupRoute105North
 	case ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_EventScript_CleanupRoute105South
 	case ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_CleanupRoute125West
@@ -252,12 +250,10 @@ AbnormalWeather_EventScript_CleanupRoute116South::
 
 AbnormalWeather_EventScript_CleanupRoute118East::
 	setmetatile 42, 5, METATILE_General_RockWall_RockBase, TRUE
-	setmetatile 42, 6, METATILE_General_RockWall_GrassBase, TRUE
 	return
 
 AbnormalWeather_EventScript_CleanupRoute118West::
 	setmetatile 9, 5, METATILE_General_RockWall_RockBase, TRUE
-	setmetatile 9, 6, METATILE_General_RockWall_GrassBase, TRUE
 	return
 
 AbnormalWeather_EventScript_CleanupRoute105North::

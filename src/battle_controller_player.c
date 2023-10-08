@@ -2761,7 +2761,7 @@ static void PlayerHandleTrainerSlide(void)
     }
     else
     {
-        trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
+        trainerPicId = gSaveBlock2Ptr->playerGender;
     }
 
     DecompressTrainerBackPic(trainerPicId, gActiveBattler);

@@ -37,13 +37,25 @@ static const u16 sMugshotPal_Sidney[] = INCBIN_U16("graphics/mugshots/sidney.gba
 static const u32 sMugshotImg_Wayne[] = INCBIN_U32("graphics/mugshots/wayne.4bpp.lz");
 static const u16 sMugshotPal_Wayne[] = INCBIN_U16("graphics/mugshots/wayne.gbapal");
 
+static const u32 sMugshotImg_Sudowoodo[] = INCBIN_U32("graphics/mugshots/sudowoodo.4bpp.lz");
+static const u16 sMugshotPal_Sudowoodo[] = INCBIN_U16("graphics/mugshots/sudowoodo.gbapal");
+
+static const u32 sMugshotImg_Tandemaus[] = INCBIN_U32("graphics/mugshots/tandemaus.4bpp.lz");
+static const u16 sMugshotPal_Tandemaus[] = INCBIN_U16("graphics/mugshots/tandemaus.gbapal");
+
+static const u32 sMugshotImg_Burrowl[] = INCBIN_U32("graphics/mugshots/burrowl.4bpp.lz");
+static const u16 sMugshotPal_Burrowl[] = INCBIN_U16("graphics/mugshots/burrowl.gbapal");
+
 static const struct Mugshot sMugshots[] = {
     //ADD YOUR MUGSHOTS HERE
  [MUGSHOT_MANGROVE] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mangrove, .palette = sMugshotPal_Mangrove},
  [MUGSHOT_MAY] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_May, .palette = sMugshotPal_May},
  [MUGSHOT_BRENDAN] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Brendan, .palette = sMugshotPal_Brendan},
  [MUGSHOT_SIDNEY] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Sidney, .palette = sMugshotPal_Sidney},
- [MUGSHOT_WAYNE] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Wayne, .palette = sMugshotPal_Wayne}
+ [MUGSHOT_WAYNE] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Wayne, .palette = sMugshotPal_Wayne},
+ [MUGSHOT_SUDOWOODO] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Sudowoodo, .palette = sMugshotPal_Sudowoodo},
+ [MUGSHOT_TANDEMAUS] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Tandemaus, .palette = sMugshotPal_Tandemaus},
+ [MUGSHOT_BURROWL] = {.x = 0, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Burrowl, .palette = sMugshotPal_Burrowl}
 };
 
 

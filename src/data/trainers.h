@@ -6251,6 +6251,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BrendanRoute103Mudkip),
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
@@ -6263,6 +6265,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BrendanRoute110Mudkip),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_BRENDAN_ROUTE_119_MUDKIP] =
@@ -6275,6 +6279,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BrendanRoute119Mudkip),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
@@ -6287,6 +6293,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BrendanRoute103Treecko),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TREECKO] =
@@ -6323,6 +6331,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_BrendanRoute103Torchic),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
@@ -6359,6 +6369,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_MayRoute103Mudkip),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_MAY_ROUTE_110_MUDKIP] =
@@ -6395,6 +6407,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_MayRoute103Treecko),
+                .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_MAY_ROUTE_110_TREECKO] =
@@ -6431,6 +6445,8 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_MayRoute103Torchic),
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
     },
 
     [TRAINER_MAY_ROUTE_110_TORCHIC] =
@@ -6817,16 +6833,16 @@ const struct Trainer gTrainers[] = {
         .party = NO_ITEM_DEFAULT_MOVES(sParty_GruntSeafloorCavern5),
     },
 
-    [TRAINER_GRUNT_UNUSED] =
+    [TRAINER_SCOUT] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = _("Sophie"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_GruntUnused),
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Scout),
     },
 
     [TRAINER_GRUNT_MT_PYRE_4] =

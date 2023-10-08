@@ -1879,7 +1879,7 @@ static const union AnimCmd sAnim_Furret_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Hoothoot_1[] =
+static const union AnimCmd sAnim_Owlball_1[] =
 {
     ANIMCMD_FRAME(1, 7),
     ANIMCMD_FRAME(0, 7),
@@ -1896,7 +1896,7 @@ static const union AnimCmd sAnim_Hoothoot_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Noctowl_1[] =
+static const union AnimCmd sAnim_Burrowl_1[] =
 {
     ANIMCMD_FRAME(1, 40),
     ANIMCMD_FRAME(0, 20),
@@ -10666,8 +10666,8 @@ SINGLE_ANIMATION(Croconaw);
 SINGLE_ANIMATION(Feraligatr);
 SINGLE_ANIMATION(Sentret);
 SINGLE_ANIMATION(Furret);
-SINGLE_ANIMATION(Hoothoot);
-SINGLE_ANIMATION(Noctowl);
+SINGLE_ANIMATION(Owlball);
+SINGLE_ANIMATION(Burrowl);
 SINGLE_ANIMATION(Ledyba);
 SINGLE_ANIMATION(Ledian);
 SINGLE_ANIMATION(Spinarak);
@@ -11802,8 +11802,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_FERALIGATR]  = sAnims_Feraligatr,
     [SPECIES_SENTRET]     = sAnims_Sentret,
     [SPECIES_FURRET]      = sAnims_Furret,
-    [SPECIES_HOOTHOOT]    = sAnims_Hoothoot,
-    [SPECIES_NOCTOWL]     = sAnims_Noctowl,
+    [SPECIES_OWLBALL]     = sAnims_Owlball,
+    [SPECIES_BURROWL]     = sAnims_Burrowl,
     [SPECIES_LEDYBA]      = sAnims_Ledyba,
     [SPECIES_LEDIAN]      = sAnims_Ledian,
     [SPECIES_SPINARAK]    = sAnims_Spinarak,

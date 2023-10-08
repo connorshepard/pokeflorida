@@ -85,7 +85,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	msgbox_mugshot RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT, MUGSHOT_BRENDAN
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth
@@ -97,7 +97,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	msgbox_mugshot RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT, MUGSHOT_BRENDAN
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth
@@ -109,7 +109,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	msgbox_mugshot RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT, MUGSHOT_BRENDAN
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest
@@ -121,7 +121,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	msgbox_mugshot RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT, MUGSHOT_BRENDAN
 	closemessage
 	applymovement LOCALID_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast
 	waitmovement 0

@@ -162,8 +162,8 @@ gCryTable::
 	cry Cry_Feraligatr
 	cry Cry_Sentret
 	cry Cry_Furret
-	cry Cry_Hoothoot
-	cry Cry_Noctowl
+	cry Cry_Owlball
+	cry Cry_Burrowl
 	cry Cry_Ledyba
 	cry Cry_Ledian
 	cry Cry_Spinarak
@@ -2284,8 +2284,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Feraligatr
 	cry_reverse Cry_Sentret
 	cry_reverse Cry_Furret
-	cry_reverse Cry_Hoothoot
-	cry_reverse Cry_Noctowl
+	cry_reverse Cry_Owlball
+	cry_reverse Cry_Burrowl
 	cry_reverse Cry_Ledyba
 	cry_reverse Cry_Ledian
 	cry_reverse Cry_Spinarak

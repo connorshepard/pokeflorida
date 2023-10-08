@@ -1035,11 +1035,11 @@ Cry_Furret::
 	.incbin "sound/direct_sound_samples/cries/furret.bin"
 
 	.align 2
-Cry_Hoothoot::
+Cry_Owlball::
 	.incbin "sound/direct_sound_samples/cries/hoothoot.bin"
 
 	.align 2
-Cry_Noctowl::
+Cry_Burrowl::
 	.incbin "sound/direct_sound_samples/cries/noctowl.bin"
 
 	.align 2

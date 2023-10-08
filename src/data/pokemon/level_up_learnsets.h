@@ -3210,15 +3210,15 @@ static const struct LevelUpMove sFurretLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sHoothootLevelUpLearnset[] = {
+static const struct LevelUpMove sOwlballLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
     LEVEL_UP_MOVE( 1, MOVE_FORESIGHT),
-    LEVEL_UP_MOVE( 4, MOVE_HYPNOSIS),
+    LEVEL_UP_MOVE( 4, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 7, MOVE_PECK),
-    LEVEL_UP_MOVE(10, MOVE_CONFUSION),
+    LEVEL_UP_MOVE(10, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE(13, MOVE_ECHOED_VOICE),
-    LEVEL_UP_MOVE(16, MOVE_ZEN_HEADBUTT),
+    LEVEL_UP_MOVE(16, MOVE_DIG),
     LEVEL_UP_MOVE(19, MOVE_PSYCHO_SHIFT),
     LEVEL_UP_MOVE(22, MOVE_EXTRASENSORY),
     LEVEL_UP_MOVE(25, MOVE_TAKE_DOWN),
@@ -3232,7 +3232,7 @@ static const struct LevelUpMove sHoothootLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sNoctowlLevelUpLearnset[] = {
+static const struct LevelUpMove sBurrowlLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_DREAM_EATER),
     LEVEL_UP_MOVE( 1, MOVE_SKY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),

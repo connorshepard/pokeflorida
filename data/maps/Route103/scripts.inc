@@ -27,7 +27,7 @@ Route103_EventScript_Rival::
 	end
 
 Route103_EventScript_RivalMay::
-    fadeoutbgm 1
+	playbgm MUS_HG_LYRA, TRUE
 	msgbox_mugshot Route103_Text_MayRoute103Pokemon, MSGBOX_DEFAULT, MUGSHOT_MAY
 	closemessage
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
@@ -37,6 +37,7 @@ Route103_EventScript_RivalMay::
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
 	msgbox_mugshot Route103_Text_MayLetsBattle, MSGBOX_DEFAULT, MUGSHOT_MAY
+    fadeoutbgm 0
 	switch VAR_STARTER_MON
 	case 0, Route103_EventScript_StartMayBattleTreecko
 	case 1, Route103_EventScript_StartMayBattleTorchic
@@ -44,7 +45,7 @@ Route103_EventScript_RivalMay::
 	end
 
 Route103_EventScript_RivalBrendan::
-    fadeoutbgm 1
+    playbgm MUS_HG_ETHAN, TRUE
     msgbox_mugshot Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT, MUGSHOT_BRENDAN
 	closemessage
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
@@ -54,6 +55,7 @@ Route103_EventScript_RivalBrendan::
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
 	msgbox_mugshot Route103_Text_BrendanLetsBattle,  MSGBOX_DEFAULT, MUGSHOT_BRENDAN
+    fadeoutbgm 0
 	switch VAR_STARTER_MON
 	case 0, Route103_EventScript_StartBrendanBattleTreecko
 	case 1, Route103_EventScript_StartBrendanBattleTorchic
@@ -63,6 +65,7 @@ Route103_EventScript_RivalBrendan::
 Route103_EventScript_StartMayBattleTreecko::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+    setvar VAR_MUGSHOT_ID, bMUGSHOT_MAY
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
@@ -70,6 +73,7 @@ Route103_EventScript_StartMayBattleTreecko::
 Route103_EventScript_StartMayBattleTorchic::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+    setvar VAR_MUGSHOT_ID, bMUGSHOT_MAY
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
@@ -77,6 +81,8 @@ Route103_EventScript_StartMayBattleTorchic::
 Route103_EventScript_StartMayBattleMudkip::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+        setvar VAR_MUGSHOT_ID, bMUGSHOT_MAY
+
 	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
@@ -84,6 +90,7 @@ Route103_EventScript_StartMayBattleMudkip::
 Route103_EventScript_StartBrendanBattleTreecko::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+        setvar VAR_MUGSHOT_ID, bMUGSHOT_BRENDAN
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_AfterBrendanBattle
 	end
@@ -91,6 +98,7 @@ Route103_EventScript_StartBrendanBattleTreecko::
 Route103_EventScript_StartBrendanBattleTorchic::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+            setvar VAR_MUGSHOT_ID, bMUGSHOT_BRENDAN
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_AfterBrendanBattle
 	end
@@ -98,6 +106,7 @@ Route103_EventScript_StartBrendanBattleTorchic::
 Route103_EventScript_StartBrendanBattleMudkip::
     playmoncry SPECIES_ZACIAN, CRY_MODE_NORMAL
     waitmoncry
+            setvar VAR_MUGSHOT_ID, bMUGSHOT_BRENDAN
 	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_AfterBrendanBattle
 	end
@@ -301,17 +310,17 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "May: Let's see… The Pokémon found\n"
+	.string "Let's see… The Pokémon found\n"
 	.string "in West Palm include…$"
 
 Route103_Text_MayLetsBattle:
 	.string "Oh, hi, {PLAYER}{KUN}!\p"
-	.string "…Oh, I see, my dad gave you\n"
-	.string "a Pokémon as a gift.\p"
-	.string "Since we're here, let's have a quick\n"
-	.string "battle!\p"
-	.string "Do you think you have what it takes\n"
-	.string "to be a Florida Man?$"
+	.string "…Umm... how's it going out there?\n"
+	.string "It's really nice to see you again.\p"
+	.string "Since we're here, let's have a\n"
+	.string "quick battle!\p"
+	.string "People always underestimate me...\n"
+	.string "but I always come out on top!$"
 
 Route103_Text_MayDefeated:
 	.string "Wow! That's great!\n"

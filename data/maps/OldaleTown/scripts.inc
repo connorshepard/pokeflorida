@@ -1,6 +1,7 @@
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
+.set LOCALID_SUDOWOODO, 5
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -199,6 +200,44 @@ OldaleTown_EventScript_BlockedPath::
 	waitmovement 0
 	releaseall
 	end
+    
+OldaleTown_EventScript_Sudowoodo::
+	lock
+	faceplayer
+	waitse
+	playse SE_SUDOWOODO_SHAKE
+	applymovement LOCALID_SUDOWOODO, OldaleTown_Movement_SudowoodoShake
+	waitmovement 0
+	release
+	end
+    
+OldaleTown_EventScript_WaterSudowoodo::
+	lock
+	faceplayer
+	special DoWateringBerryTreeAnim
+	waitstate
+	waitse
+	playse SE_SUDOWOODO_SHAKE
+	applymovement LOCALID_SUDOWOODO, OldaleTown_Movement_SudowoodoShake
+	waitmovement 0
+	msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
+	closemessage
+	waitse
+	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
+	setwildbattle SPECIES_SUDOWOODO, 10
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldaleTown_EventScript_DefeatedSudowoodo
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, OldaleTown_EventScript_DefeatedSudowoodo
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, OldaleTown_EventScript_DefeatedSudowoodo
+	setflag FLAG_DEFEATED_SUDOWOODO
+	release
+	end
 
 OldaleTown_EventScript_NotBlockingPath::
 	msgbox OldaleTown_Text_FinishedSketchingFootprints, MSGBOX_DEFAULT
@@ -212,6 +251,10 @@ OldaleTown_EventScript_Rival::
 	setvar VAR_0x8009, 0
 	goto OldaleTown_EventScript_ShowRivalMessage
 	end
+
+OldaleTown_EventScript_ShowSudowoodo::
+	clearflag FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO
+	return
 
 OldaleTown_EventScript_Theatre::
 	msgbox OldaleTown_Text_MayLetsGoBack, MSGBOX_SIGN
@@ -280,12 +323,35 @@ OldaleTown_EventScript_DoExitMovement2::
 OldaleTown_EventScript_GymSign::
 	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_SIGN
 	end
-    
+
+OldaleTown_EventScript_DefeatedSudowoodo::
+	setflag FLAG_DEFEATED_SUDOWOODO
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
 OldaleTown_EventScript_RivalTrigger1::
 	end
     
 OldaleTown_EventScript_Scout::
+    lock
+    faceplayer
+    goto_if_eq VAR_FIRST_COOKIES, 0, OldaleTown_EventScript_GiveCookies
+    msgbox OldaleTown_Text_BattleForCookies, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, YES, OldaleTown_EventScript_ScoutBattle
+    release
+	end
+    
+OldaleTown_EventScript_GiveCookies::
     msgbox OldaleTown_Text_Cookies, MSGBOX_NPC
+    giveitem ITEM_LAVA_COOKIE
+    msgbox OldaleTown_Text_PotionExplanation, MSGBOX_NPC
+    setvar VAR_FIRST_COOKIES, 1
+    return
+    
+OldaleTown_EventScript_ScoutBattle::
+	trainerbattle_no_intro TRAINER_SCOUT, OldaleTown_Text_ScoutDefeated
+    giveitem ITEM_LAVA_COOKIE
+    release
 	end
 
 OldaleTown_Movement_RivalApproachPlayer1:
@@ -328,6 +394,24 @@ OldaleTown_Movement_BackUp:
 	walk_right
 	unlock_facing_direction
 	step_end
+    
+OldaleTown_Movement_SudowoodoShake:
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	step_end
 
 OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_down
@@ -352,9 +436,9 @@ OldaleTown_Text_ThisIsAPokemonMart:
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a Pokémon Center\l"
-	.string "in certain situations.$"
+	.string "See? Good huh? If you want more\n"
+	.string "cookies, it'll cost ya a bunch,\l"
+	.string "or you could battle me instead.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
@@ -390,5 +474,12 @@ OldaleTown_Text_Cookies:
 	.string "Buy some Girl Scout Cookies!\p"
 	.string "We have Thin Mints, Samoas,\n"
 	.string "S'mores, and Lemon-ups!\p"
-	.string "They're $10.00 each\n"
-	.string "them, okay?$"
+	.string "They're really really good!\n"
+	.string "Okay, fine, on the house.$"
+    
+OldaleTown_Text_BattleForCookies:
+    .string "Hey! Let's have a battle!\n"
+	.string "If you win... free cookies!$"
+    
+OldaleTown_Text_ScoutDefeated:
+    .string "Aww, man...$"

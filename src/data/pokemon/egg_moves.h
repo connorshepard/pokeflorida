@@ -913,7 +913,7 @@ const u16 gEggMoves[] = {
         MOVE_CAPTIVATE,
         MOVE_BABY_DOLL_EYES),
 
-    egg_moves(HOOTHOOT,
+    egg_moves(OWLBALL,
         MOVE_MIRROR_MOVE,
         MOVE_SUPERSONIC,
         MOVE_FEINT_ATTACK,

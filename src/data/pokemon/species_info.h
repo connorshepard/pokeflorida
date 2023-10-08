@@ -4590,7 +4590,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_HOOTHOOT] =
+    [SPECIES_OWLBALL] =
     {
         .baseHP        = 60,
         .baseAttack    = 30,
@@ -4598,7 +4598,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 36,
         .baseSpDefense = 56,
-        .types = { TYPE_NORMAL, TYPE_FLYING },
+        .types = { TYPE_GROUND, TYPE_FLYING },
         .catchRate = 255,
         .expYield = 52,
         .evYield_HP        = 1,
@@ -4612,7 +4612,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_NOCTOWL] =
+    [SPECIES_BURROWL] =
     {
         .baseHP        = 100,
         .baseAttack    = 50,
@@ -4624,7 +4624,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .baseSpAttack  = 76,
         #endif
-        .types = { TYPE_NORMAL, TYPE_FLYING},
+        .types = { TYPE_GROUND, TYPE_FLYING},
         .catchRate = 90,
         .expYield = 158,
         .evYield_HP        = 2,

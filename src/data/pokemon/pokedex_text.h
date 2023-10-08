@@ -976,17 +976,17 @@ const u8 gFurretPokedexText[] = _(
     "spaces and get away. In spite of its short\n"
     "limbs, it is very nimble and fleet.");
 
-const u8 gHoothootPokedexText[] = _(
-    "It has an internal organ that senses\n"
-    "the earth's rotation. Using this special\n"
-    "organ, a Hoothoot begins hooting at\n"
-    "precisely the same time every day.");
+const u8 gOwlballPokedexText[] = _(
+    "Known as the mascot of Florida Atlantic\n"
+    "University's football team, Owlballs dig\n"
+    "their burrows outside the FAU stadium and\n"
+    "pop out at night to watch their home team.");
 
-const u8 gNoctowlPokedexText[] = _(
-    "It unfailingly catches prey in darkness.\n"
-    "Noctowl owe their success to superior\n"
-    "vision that allows them to see in minimal\n"
-    "light, and to their supple and silent wings.");
+const u8 gBurrowlPokedexText[] = _(
+    "Locals used to call them 'howdy birds'.\n"
+    "Whenever someone approaches their burrow,\n"
+    "they always pop up out of their nest to\n"
+    "hoot a cheerful greeting at visitors.");
 
 const u8 gLedybaPokedexText[] = _(
     "Ledyba communicate using a fluid that\n"
@@ -1110,8 +1110,9 @@ const u8 gAzumarillPokedexText[] = _(
 
 const u8 gSudowoodoPokedexText[] = _(
     "Whenever a tropical storm approaches,\n"
-    "Sudowoodo seek refuge in nearby cities,\n"
-    "offering fresh oranges for shelter.");
+    "Sudowoodo seek refuge in nearby cities.\n"
+    "In exchange for shelter from the storm,\n"
+    "they offer fresh oranges to their hosts.");
 
 const u8 gPolitoedPokedexText[] = _(
     "The curled hair on its head proves its\n"
@@ -1294,16 +1295,16 @@ const u8 gSneaselPokedexText[] = _(
     "while the parents are away.");
 
 const u8 gTeddiursaPokedexText[] = _(
-    "It licks its palms that are sweetened by\n"
-    "being soaked in honey. A Teddiursa makes\n"
-    "its own honey by blending fruits and pollen\n"
-    "collected by Beedrill.");
+    "Shy and secretive, Teddiursa spend their\n"
+    "days looking for a smackerel of honey\n"
+    "and their nights snoozing in the trees,\n"
+    "the diamonds on their bellies glowing.");
 
 const u8 gUrsaringPokedexText[] = _(
-    "In forests, it is said that there are many\n"
-    "streams and towering trees where an\n"
-    "Ursaring gathers food. It walks through\n"
-    "its forest collecting food every day.");
+    "In Central Florida, residents are warned\n"
+    "to lock their doors and guard their trash.\n"
+    "A hungry Ursaring has no fear of man, and\n"
+    "it can smell human food from miles away.");
 
 const u8 gSlugmaPokedexText[] = _(
     "It is a species of Pokémon that lives in\n"

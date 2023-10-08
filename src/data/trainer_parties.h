@@ -6915,7 +6915,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayRoute103Mudkip[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_TREECKO,
+    .species = SPECIES_EEVEE,
     }
 };
 
@@ -6959,7 +6959,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayRoute103Treecko[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_TORCHIC,
+    .species = SPECIES_EEVEE,
     }
 };
 
@@ -7003,7 +7003,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayRoute103Torchic[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_MUDKIP,
+    .species = SPECIES_EEVEE,
     }
 };
 
@@ -7605,16 +7605,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern5[] =
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntUnused[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Scout[] = {
     {
     .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_WAILMER,
+    .lvl = 7,
+    .species = SPECIES_SKWOVET,
     },
     {
     .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .lvl = 7,
+    .species = SPECIES_OWLBALL,
     }
 };
 
@@ -11104,7 +11104,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona3[] = {
     {
     .iv = 255,
     .lvl = 43,
-    .species = SPECIES_HOOTHOOT,
+    .species = SPECIES_OWLBALL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
     },
@@ -11149,7 +11149,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona4[] = {
     {
     .iv = 255,
     .lvl = 48,
-    .species = SPECIES_NOCTOWL,
+    .species = SPECIES_BURROWL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
     },
@@ -11194,7 +11194,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona5[] = {
     {
     .iv = 255,
     .lvl = 53,
-    .species = SPECIES_NOCTOWL,
+    .species = SPECIES_BURROWL,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_DREAM_EATER}
     },

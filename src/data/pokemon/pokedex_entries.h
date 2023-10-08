@@ -1956,24 +1956,24 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_HOOTHOOT] =
+    [NATIONAL_DEX_OWLBALL] =
     {
-        .categoryName = _("Owl"),
+        .categoryName = _("Football"),
         .height = 7,
         .weight = 212,
-        .description = gHoothootPokedexText,
+        .description = gOwlballPokedexText,
         .pokemonScale = 380,
         .pokemonOffset = -2,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_NOCTOWL] =
+    [NATIONAL_DEX_BURROWL] =
     {
-        .categoryName = _("Owl"),
+        .categoryName = _("Hooting"),
         .height = 16,
         .weight = 408,
-        .description = gNoctowlPokedexText,
+        .description = gBurrowlPokedexText,
         .pokemonScale = 278,
         .pokemonOffset = 3,
         .trainerScale = 256,
@@ -2606,7 +2606,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_URSARING] =
     {
-        .categoryName = _("Hibernator"),
+        .categoryName = _("Black Bear"),
         .height = 18,
         .weight = 1258,
         .description = gUrsaringPokedexText,

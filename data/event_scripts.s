@@ -56,6 +56,7 @@
 #include "constants/vars.h"
 #include "constants/mugshots.h"
 #include "constants/weather.h"
+#include "constants/battle_transition.h"
 #include "constants/day_night.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"

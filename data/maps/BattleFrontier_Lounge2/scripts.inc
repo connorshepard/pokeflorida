@@ -113,14 +113,8 @@ BattleFrontier_Lounge2_EventScript_TriathleteF::
 	end
 
 BattleFrontier_Lounge2_Text_FrontierManiacIntro::
-	.string "Howdy! When it comes to news about\n"
-	.string "the BATTLE FRONTIER, I'm no. 1.\p"
-	.string "You can think of me as\n"
-	.string "the FRONTIER MANIAC.\p"
-	.string "Just checking, but you are a TRAINER,\n"
-	.string "isn't that right?\p"
-	.string "I'll happily share the hottest news\n"
-	.string "I gathered about the BATTLE FRONTIER.$"
+	.string "What's up? Hey, you're too young to\n"
+	.string "order drinks. Nice try, kid.$"
 
 BattleFrontier_Lounge2_Text_SwingByForTheLatestWord::
 	.string "Howdy! Did you swing by to grill me\n"
@@ -364,6 +358,6 @@ BattleFrontier_Lounge2_Text_AmazingPowerOfPersuasion::
 	.string "My mentor's like none other!$"
 
 BattleFrontier_Lounge2_Text_ThisPlaceIsScaringMe::
-	.string "…What is this place?\n"
-	.string "It's scaring me…$"
+	.string "Disco night! I asked the DJ to play\n"
+	.string "some Diana Ross next.$"
 

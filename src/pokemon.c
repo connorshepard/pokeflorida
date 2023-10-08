@@ -501,8 +501,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(FERALIGATR),
     SPECIES_TO_NATIONAL(SENTRET),
     SPECIES_TO_NATIONAL(FURRET),
-    SPECIES_TO_NATIONAL(HOOTHOOT),
-    SPECIES_TO_NATIONAL(NOCTOWL),
+    SPECIES_TO_NATIONAL(OWLBALL),
+    SPECIES_TO_NATIONAL(BURROWL),
     SPECIES_TO_NATIONAL(LEDYBA),
     SPECIES_TO_NATIONAL(LEDIAN),
     SPECIES_TO_NATIONAL(SPINARAK),
@@ -2126,8 +2126,8 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_FERALIGATR - 1]    = ANIM_H_SHAKE,
     [SPECIES_SENTRET - 1]       = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_FURRET - 1]        = ANIM_H_JUMPS_V_STRETCH,
-    [SPECIES_HOOTHOOT - 1]      = ANIM_V_SLIDE_SLOW,
-    [SPECIES_NOCTOWL - 1]       = ANIM_V_STRETCH,
+    [SPECIES_OWLBALL - 1]      = ANIM_V_SLIDE_SLOW,
+    [SPECIES_BURROWL - 1]       = ANIM_V_STRETCH,
     [SPECIES_LEDYBA - 1]        = ANIM_V_JUMPS_SMALL,
     [SPECIES_LEDIAN - 1]        = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_SPINARAK - 1]      = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
@@ -7574,7 +7574,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_DP_VS_RIVAL;
+            return MUS_HG_VS_FRONTIER_BRAIN;
         }
     }
     else
@@ -7597,7 +7597,7 @@ u16 GetBattleBGM(void)
         #endif
             return MUS_RG_VS_MEWTWO;
         case SPECIES_MEW:
-            return MUS_VS_MEW;
+            return MUS_HG_INTRO;
         case SPECIES_RAIKOU:
             return MUS_HG_VS_RAIKOU;
         case SPECIES_ENTEI:
@@ -7666,7 +7666,7 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_ARCEUS;
         #endif
         default:
-            return MUS_HG_GLOBAL_TERMINAL;
+            return MUS_HG_INTRO;
         }
     }
 }

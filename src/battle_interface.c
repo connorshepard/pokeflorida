@@ -1074,7 +1074,7 @@ static void UpdateOpponentHpTextDoubles(u32 healthboxSpriteId, u32 barSpriteId, 
         txtPtr = ConvertIntToDecimalStringN(text + 6, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
         if (!maxOrCurrent)
             StringCopy(txtPtr, gText_Slash);
-        RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_BOLD, text);
+        RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_SMALL_NARROW, text);
 
         for (i = var; i < var + 3; i++)
         {
@@ -1118,7 +1118,7 @@ static void UpdateOpponentHpTextSingles(u32 healthboxSpriteId, s16 value, u32 ma
             var = 49;
 
         ConvertIntToDecimalStringN(text + 6, value, STR_CONV_MODE_LEADING_ZEROS, 3);
-        RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_BOLD, text);
+        RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_SMALL_NARROW, text);
 
         for (i = 0; i < 3; i++)
         {
@@ -1187,7 +1187,7 @@ static void PrintSafariMonInfo(u8 healthboxSpriteId, struct Pokemon *mon)
     var = 5;
     nature = GetNature(mon);
     StringCopy(&text[6], gNatureNamePointers[nature]);
-    RenderTextHandleBold(barFontGfx, FONT_BOLD, text);
+    RenderTextHandleBold(barFontGfx, FONT_SMALL_NARROW, text);
 
     for (j = 6, i = 0; i < var; i++, j++)
     {
@@ -1219,7 +1219,7 @@ static void PrintSafariMonInfo(u8 healthboxSpriteId, struct Pokemon *mon)
     ConvertIntToDecimalStringN(&text[9], gBattleStruct->safariEscapeFactor, STR_CONV_MODE_RIGHT_ALIGN, 2);
     text[5] = CHAR_SPACE;
     text[8] = CHAR_SLASH;
-    RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_BOLD, text);
+    RenderTextHandleBold(gMonSpritesGfxPtr->barFontGfx, FONT_SMALL_NARROW, text);
 
     j = healthBarSpriteId; // Needed to match for some reason.
     for (j = 0; j < 5; j++)
@@ -2337,7 +2337,7 @@ static void UpdateLeftNoOfBallsTextOnHealthbox(u8 healthboxSpriteId)
     txtPtr = StringCopy(text, gText_SafariBallLeft);
     ConvertIntToDecimalStringN(txtPtr, gNumSafariBalls, STR_CONV_MODE_LEFT_ALIGN, 2);
 
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, GetStringRightAlignXOffset(FONT_SMALL, text, 0x2F), 3, 2, &windowId);
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, GetStringRightAlignXOffset(FONT_SMALL_NARROW, text, 0x2F), 3, 2, &windowId);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
     SafariTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x2C0) + spriteTileNum, windowTileData, 2);
     SafariTextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0xA00) + spriteTileNum, windowTileData + 0x40, 4);
@@ -2720,7 +2720,7 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
     color[1] = 1;
     color[2] = 3;
 
-    AddTextPrinterParameterized4(winId, FONT_SMALL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+    AddTextPrinterParameterized4(winId, FONT_SMALL_NARROW, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 
     *windowId = winId;
     return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
@@ -2838,7 +2838,7 @@ static u8* AddTextPrinterAndCreateWindowOnAbilityPopUp(const u8 *str, u32 x, u32
     *windowId = AddWindow(&winTemplate);
     FillWindowPixelBuffer(*windowId, PIXEL_FILL(color1));
 
-    AddTextPrinterParameterized4(*windowId, FONT_SMALL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+    AddTextPrinterParameterized4(*windowId, FONT_SMALL_NARROW, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
     return (u8 *)(GetWindowAttribute(*windowId, WINDOW_TILE_DATA));
 }
 

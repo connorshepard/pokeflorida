@@ -317,13 +317,13 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "… … … … … … … …\p"
 	.string "Oh, you're {PLAYER}{KUN}.\n"
 	.string "So your move was today.\p"
-	.string "Um… I'm MAY.\n"
+	.string "Um… I'm May.\n"
 	.string "Glad to meet you!\p"
 	.string "I…\n"
 	.string "I have this dream of becoming friends\l"
-	.string "with POKéMON all across Florida.\p"
+	.string "with Pokémon all across Florida.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
-	.string "my dad, Prof. Mangrove.\p"
+	.string "my dad, Professor Mangrove.\p"
 	.string "I was hoping that you would be nice,\n"
 	.string "{PLAYER}{KUN}, and that we could be friends.\p"
 	.string "Oh, this is silly, isn't it?\n"
@@ -331,7 +331,7 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Eheheh…\p"
 	.string "Oh, no! I forgot!\p"
 	.string "I was supposed to go help Dad catch\n"
-	.string "some wild POKéMON!\p"
+	.string "some wild Pokémon!\p"
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
@@ -355,20 +355,20 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Do you want me to go catch you one?\p"
 	.string "Aw, darn, I forgot…\p"
 	.string "I'm supposed to go help my dad catch\n"
-	.string "some wild PokéMon.\p"
+	.string "some wild Pokémon.\p"
 	.string "Some other time, okay?$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
-	.string "POKéMON fully restored…\n"
+	.string "Pokémon at full HP…\n"
 	.string "Items all packed, and…$"
 
 RivalsHouse_2F_Text_ItsRivalsPokeBall:
-	.string "It's {RIVAL}'s POKé BALL!\p"
+	.string "It's {RIVAL}'s Poké Ball!\p"
 	.string "Better leave it right where it is.$"
 
 RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
-	.string "MAY: {PLAYER}{KUN}!\p"
-	.string "I was just checking my POKéDEX.\p"
+	.string "May: {PLAYER}{KUN}!\p"
+	.string "I was just checking my PokéDex.\p"
 	.string "There's still a lot of Pokémon that\n"
 	.string "I've seen but haven't caught.\p"
 	.string "And there are many others that\n"
@@ -377,23 +377,23 @@ RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 	.string "some Pokémon next?$"
 
 RivalsHouse_2F_Text_MayWhereShouldIGoNext:
-	.string "MAY: I wonder where I should go catch\n"
-	.string "some POKéMON next?\p"
+	.string "May: I wonder where I should go catch\n"
+	.string "some Pokémon next?\p"
 	.string "Wouldn't it be funny if we ran into each\n"
 	.string "other, {PLAYER}{KUN}?$"
 
 RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
-	.string "BRENDAN: Hey, it's {PLAYER}.\p"
-	.string "I was just checking out my POKéDEX.\p"
-	.string "There are still many POKéMON that\n"
+	.string "Brendan: Hey, it's {PLAYER}.\p"
+	.string "I was just checking out my PokéDex.\p"
+	.string "There are still many Pokémon that\n"
 	.string "I need to catch, I know, but this\l"
 	.string "is looking pretty good.\p"
-	.string "Checking this POKéDEX out gives me\n"
+	.string "Checking this PokéDex out gives me\n"
 	.string "the urge to hit the road again.$"
 
 RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: I'm having a hard time deciding\n"
-	.string "where I should catch POKéMON next.\p"
+	.string "Brendan: I'm having a hard time deciding\n"
+	.string "where I should catch Pokémon next.\p"
 	.string "Hey, {PLAYER}, if I see you while I'm out\n"
 	.string "catching Pokémon, I can pitch you a\l"
 	.string "battle if you'd like.$"

@@ -927,7 +927,7 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
-	.string "POKéMON now…\l"
+	.string "Pokémon now…\l"
 	.string "Make sure to go visit your dad\p"
 	.string "before you start heading north.\n"
 	.string "He's working in West Palm right now.\p"

@@ -243,6 +243,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_Dachsbun::
     faceplayer
     playmoncry SPECIES_HERDIER, CRY_MODE_NORMAL
     msgbox PlayersHouse_1F_Text_PetDachsbun, MSGBOX_DEFAULT
+    closemessage
 	return
 
 LittlerootTown_BrendansHouse_1F_Movement_PlayerWatchBrendanExit0:
